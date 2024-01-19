@@ -1,0 +1,93 @@
+<!-- product filtering start -->
+<nav>
+<div class="sidebarBlock"> 
+    <h5 class="sidebarBlock-heading">{{lang 'category.label'}}</h5>
+    <ul class="navList">
+    {{#each categories}}
+        <li class="navList-item">
+        {{#if children}}
+            <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+            <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+            <ul class="navList-childlist">
+            {{#each children}}
+                <li class="navList-childlist-item">
+                {{#if children}}
+                    <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                    <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                    <ul class="navList-childlist">
+                    {{#each children}}
+                        <li class="navList-childlist-item">
+                        {{#if children}}
+                            <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                            <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                            <ul class="navList-childlist">
+                            {{#each children}}
+                                <li class="navList-childlist-item">
+                                {{#if children}}
+                                    <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                                    <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                    <ul class="navList-childlist">
+                                    {{#each children}}
+                                        <li class="navList-childlist-item">
+                                        {{#if children}}
+                                            <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                                            <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                            <ul class="navList-childlist">
+                                            {{#each children}}
+                                                <li class="navList-childlist-item">
+                                                {{#if children}}
+                                                    <i class="icon navPages-action-moreIcon navList-icon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                                                    <a class="navList-action has-subMenu" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                                {{else}}
+                                                    <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                                {{/if}}  
+                                                </li>
+                                            {{/each}}
+                                            </ul>
+                                        {{else}}
+                                            <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                        {{/if}}
+                                        </li>
+                                    {{/each}}
+                                    </ul>
+                                {{else}}
+                                    <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                                {{/if}}
+                                </li>
+                            {{/each}}
+                            </ul>
+                        {{else}}
+                            <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                        {{/if}}
+                        </li>
+                    {{/each}}
+                    </ul>
+                {{else}}
+                    <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+                {{/if}}
+                </li>
+            {{/each}}
+            </ul>
+        {{else}}
+            <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}" data-cate-url="{{url}}">{{name}}</a>
+        {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+</div> 
+
+    {{#if category.faceted_search_enabled}}
+        {{> components/faceted-search/index category}}
+    {{else}}
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+    {{/if}}
+</nav>
+<!-- product filtering end -->
+
+<!-- Page Builder Region START -->
+{{{region name="sidebar_below_categories"}}}
+<div style="margin-top:10px;">
+{{{region name="sidebar_below_categories--global"}}}
+</div>
+<!-- Page Builder Region END -->
+

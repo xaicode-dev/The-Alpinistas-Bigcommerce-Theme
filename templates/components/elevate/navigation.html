@@ -1,0 +1,47 @@
+<nav class="navUser">
+    <ul class="navUser-section navUser-section--alt">
+        {{> components/elevate/currency-selector}} 
+
+        {{#if customer.store_credit.value '>' 0}}
+            <li class="navUser-item show">
+                <a class="navUser-action navUser-action--storeCredit"
+                   data-dropdown="storeCredit-dropdown"
+                   data-options="align:bottom"
+                   href="{{urls.cart}}">
+                        <span class="navUser-action-divider">Credit</span>
+                </a>
+                <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
+                    {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                </div>
+            </li>
+        {{/if}}
+        <li class="navUser-item show">
+            <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav>
+                <span class="icon-random show theme-icon" data-icon="&#xe914;"></span>
+                <span class="show countPill countPill--positive countPill--alt"></span>
+            </a>
+        </li>
+        {{#if settings.show_wishlist}}
+        <li class="navUser-item navUser-item--wishlist show">
+            <a class="navUser-action" href="/wishlist.php">
+                <span class="show">{{lang 'common.wishlist'}}</span>
+                <span class="icon-wishlist show theme-icon" data-icon="&#xe919;"></span>
+            </a>
+        </li>
+        {{/if}}
+        <li class="navUser-item navUser-item--cart show">
+            <a
+                class="navUser-action"
+                data-cart-preview
+                data-dropdown="cart-preview-dropdown"
+                data-options="align:right"
+                href="{{urls.cart}}">
+                <span class="icon-shopping-cart show theme-icon" data-icon="&#xe916;"></span>
+                <span class="navUser-item-cartLabel show">{{lang 'common.cart'}}</span> 
+                <span class="countPill cart-quantity show"></span>
+            </a>
+
+            <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+        </li>
+    </ul>
+</nav>

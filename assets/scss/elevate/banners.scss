@@ -1,0 +1,149 @@
+/* default marketing banner style start */
+.banners{
+	padding: 0;
+	background-color: transparent;
+	.banner{
+		max-width: 100%;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+
+.bottom-banner{
+	margin:20px 0px;
+	padding:10px;
+	color: stencilColor("banner-text-color");
+	a{
+		color: stencilColor("banner-link-color");
+	}
+}
+/* default marketing banner style end */
+
+/* marketing banner style start */ 
+.custom-banners{
+	background-color: stencilColor("color-primary");
+	.banners{
+		font-size: 0;
+		padding: 8px 0;
+		.banner{
+			font-family: stencilFontFamily("banner-font");
+			font-size: ($banner-fontsize) - 4;
+			color: $banner-color;
+			font-weight: 700;
+			text-transform: uppercase;
+			@include md{ 
+				font-size: ($banner-fontsize) - 2;
+			}
+			@include lg{
+				font-size: $banner-fontsize;
+			}
+		}	
+		@include lg{
+			padding: 14px 0;
+		}
+	}
+	&.top{
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: zIndex("higher");
+		@include md{
+			position: relative;
+		}
+	}
+	.banners + .static-banner{
+		padding-top: 0;
+	}
+}
+.product-listing-banners{
+	.banners{
+		font-size: 0;
+		padding: 8px 0;
+		.banner{
+			font-family: stencilFontFamily("banner-font");
+			font-size: ($banner-fontsize) - 4;
+			color: $banner-color;
+			font-weight: 700;
+			text-transform: uppercase;
+			@include md{ 
+				font-size: ($banner-fontsize) - 2;
+			}
+			@include lg{
+				font-size: $banner-fontsize;
+			}
+		}	
+		@include lg{
+			padding: 14px 0;
+		}
+	}
+}
+/* marketing banner style end */
+
+/* static banner style start */
+.static-banner{
+	font-size: 0;
+	padding: 8px 0;
+	.static-banner-left{
+		padding-bottom: 4px;
+		width: 100%;
+		text-align: center;
+		p{
+			font-family: stencilFontFamily("banner-font");
+			font-size: ($banner-fontsize) - 4;
+			color: $banner-color;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			@include md{ 
+				font-size: ($banner-fontsize) - 2;
+			}
+			@include lg{
+				font-size: $banner-fontsize;
+			}
+		}
+		@include sm{
+			padding-bottom: 0;
+			width: 50%;
+			text-align: left;
+		} 
+		&.center{
+			padding-bottom: 0;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.static-banner-right{
+		width: 100%;
+		text-align: center;
+		span{
+			font-family: stencilFontFamily("banner-font");
+			font-size: ($banner-fontsize) - 4;
+			color: $banner-color;
+			font-weight: 700;
+			text-transform: uppercase;
+			@include md{ 
+				font-size: ($banner-fontsize) - 2;
+			}
+			@include lg{
+				font-size: $banner-fontsize;
+			}
+			a{
+				text-decoration: none;
+				color: $banner-color;
+				&:hover{
+					color: $banner-hover-color;
+				}
+			}
+		}
+		@include sm{
+			width: 50%;
+			text-align: right;
+		}
+	}
+	@include lg{
+		padding: 14px 0;
+	}
+}
+/* static banner style end */

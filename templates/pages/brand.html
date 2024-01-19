@@ -1,0 +1,88 @@
+---
+brand:
+    products:
+        limit: {{theme_settings.brandpage_products_per_page}}
+---
+{{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
+{{inject "bearerToken" settings.storefront_api.token}}
+{{inject "showSwatch" theme_settings.show_card_swatch}}
+{{#partial "head"}}
+    {{#if pagination.brand.previous}}
+        <link rel="prev" href="{{pagination.brand.previous}}">
+    {{/if}}
+    {{#if pagination.brand.next}}
+        <link rel="next" href="{{pagination.brand.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if brand.image}}
+    <div class="brand-image-container">
+        {{> components/common/responsive-img
+            image=brand.image
+            fallback_size=theme_settings.thumb_size
+            lazyload='disabled'
+        }}
+    </div>
+{{/if}}
+<h1 class="page-heading">{{brand.name}}</h1>
+{{{region name="brand_below_header"}}}
+
+<!-- brand top banner start -->
+<div class="product-listing-banners">
+    {{#if banners.top}}
+        <div class="banners top-banner" data-banner-location="top">
+            {{#each (limit banners.top_metadata 1)}}
+            <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+                <div data-event-type="promotion-click">
+                    {{{this.content}}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
+<!-- brand top banner end -->
+
+<div class="page">
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/brand/sidebar}}
+    </aside>
+
+    <main class="page-content" id="product-listing-container">
+        {{#if brand.products}}
+            {{> components/brand/product-listing}}
+        {{else}}
+            <p>{{lang 'brands.no_products'}}</p>
+        {{/if}}
+        {{{region name="brand_below_content"}}}
+        
+        
+        <!-- brand bottom banner start -->
+		{{#if banners.bottom}}
+		    {{#if settings.data_tag_enabled}}
+		        <div class="banners bottom-banner" data-banner-location="bottom">
+		            {{#each (limit banners.bottom_metadata 1)}}
+		                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+		                    <div data-event-type="promotion-click">
+		                        {{{this.content}}}
+		                    </div>
+		                </div>
+		            {{/each}}
+		        </div>
+		    {{else}}
+		        <div class="banners bottom-banner" data-banner-location="bottom">
+		            <div class="banner">
+		                {{{limit banners.bottom 1}}}
+		            </div>
+		        </div>
+		    {{/if}}
+		{{/if}}
+		<!-- brand bottom banner end -->
+
+    </main>
+</div>
+
+{{/partial}}
+{{> layout/base}}

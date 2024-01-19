@@ -1,0 +1,226 @@
+// =============================================================================
+// BLOG
+// =============================================================================
+
+// Blog post
+// -----------------------------------------------------------------------------
+
+.blog {
+    display: inline-block;
+    margin-bottom: spacing("single");
+
+    @include breakpoint("medium") {
+        margin: auto;
+        width: 100%;
+    }
+
+    + .blog {
+        border-top: container("border");
+        margin-top: spacing("double");
+        padding-top: spacing("double");
+    }
+
+    .tags {
+        margin-top: spacing("double");
+        text-align: center;
+    }
+
+    .socialLinks {
+        text-align: center;
+    }
+
+    // scss-lint:disable SelectorFormat
+    .addthis_toolbox {
+        margin-top: spacing("double");
+    }
+    // scss-lint:enable SelectorFormat
+
+    .blog-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0px;
+        text-align: left;
+        padding-top: 10px;
+
+        @include breakpoint("medium") {
+            font-size: 32px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .blog-date,
+    .blog-author {
+        color: stencilColor("color-textSecondary");
+        text-align: left;
+    }
+
+    .blog-author {
+        margin-bottom: spacing("single") + spacing("base");
+    }
+
+    .blog-post {
+        font-size: fontSize("smaller");
+        text-align: left;
+    }
+
+    .blog-thumbnail {
+        margin: 0 auto;
+        position: relative;
+        max-width: get_width(stencilString('blog_size'));
+
+        @include breakpoint("medium") {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .blog-post-figure {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        float: left;
+        width: 100%;
+
+        @include breakpoint("medium") {
+            width: grid-calc(5, $total-columns);
+        }
+    }
+
+    .blog-post-body {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        float: left;
+
+        @include breakpoint("medium") {
+            width: grid-calc(7, $total-columns);
+            text-align: left;
+        }
+
+        @include breakpoint("large") {
+            width: grid-calc(7, $total-columns);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.blog_post {
+    display: inline-block;
+    margin-bottom: spacing("single");
+
+    @include breakpoint("medium") {
+        margin: auto;
+        width: 100%;
+    }
+
+    + .blog {
+        border-top: container("border");
+        margin-top: spacing("double");
+        padding-top: spacing("double");
+    }
+
+    .tags {
+        margin-top: spacing("double");
+        text-align: center;
+    }
+
+    .socialLinks {
+        text-align: center;
+    }
+
+    // scss-lint:disable SelectorFormat
+    .addthis_toolbox {
+        margin-top: spacing("double");
+    }
+    // scss-lint:enable SelectorFormat
+
+    .blog-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0px;
+        text-align: left;
+        padding-top: 10px;
+
+        @include breakpoint("medium") {
+            font-size: 32px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .blog-date,
+    .blog-author {
+        color: stencilColor("color-textSecondary");
+        text-align: left;
+    }
+
+    .blog-author {
+        margin-bottom: spacing("single") + spacing("base");
+    }
+
+    .blog-post {
+        font-size: fontSize("smaller");
+        text-align: left;
+    }
+
+    .blog-thumbnail {
+        margin: 0 auto;
+        position: relative;
+        max-width: get_width(stencilString('blog_size'));
+
+        @include breakpoint("medium") {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .blog-post-figure {
+        display: none;
+        margin: auto;
+        text-align: center;
+        float: left;
+        width: 100%;
+
+        @include breakpoint("medium") {
+            width: grid-calc(5, $total-columns);
+        }
+    }
+
+    .blog-post-body {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        float: left;
+
+        @include breakpoint("medium") {
+           	width: 100%;
+            text-align: left;
+        }
+
+        @include breakpoint("large") {
+        	width: 100%;
+        }
+    }
+}

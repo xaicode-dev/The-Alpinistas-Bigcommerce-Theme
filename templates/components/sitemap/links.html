@@ -1,0 +1,10 @@
+<li class="sitemap-sub-item">
+    <a href="{{url}}" class="sitemap-links">{{label}}</a>
+    {{#if children}}
+        <ul class="sitemap-sub-list">
+            {{#each children}}
+                {{> components/sitemap/links}}
+            {{/each}}
+        </ul>
+    {{/if}}
+</li>

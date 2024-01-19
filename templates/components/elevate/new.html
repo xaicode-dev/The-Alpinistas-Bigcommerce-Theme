@@ -1,0 +1,71 @@
+{{#unless theme_settings.hide_new}}
+<div class="featured-products">
+	<div class="container">
+		<div class="section-title">
+			<h2 class="section-heading"> 
+				{{theme_settings.new-products-title}}
+			</h2>
+			{{#if theme_settings.new-products-sub}}
+				<p class="section-sub-heading">
+					{{theme_settings.new-products-sub}}
+				</p>
+			{{/if}}
+		</div> 
+		<ul class="productGrid productGrid--maxCol{{ columns }}" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}
+			data-slick='{
+		        "dots": false,
+		        "arrows": true,
+		        "infinite": true,
+		        "slidesToShow": 5,
+		        "slidesToScroll": 1,
+		        "autoplay": false,
+		        "autoplaySpeed": 2000,
+		        "responsive": [
+		        	{
+				      "breakpoint": 1366,
+				      "settings": {
+				      	"arrows": true,
+				      	"autoplay": false,
+				      	"autoplaySpeed": 2000,
+				        "slidesToShow": 4
+				      }
+				    },
+		            {
+				      "breakpoint": 1024,
+				      "settings": {
+				      	"arrows": true,
+				      	"autoplay": false,
+				      	"autoplaySpeed": 2000,
+				        "slidesToShow": 3
+				      }
+				    },
+				    {
+				      "breakpoint": 600,
+				      "settings": {
+				      	"arrows": true, 
+				      	"autoplay": false,
+				      	"autoplaySpeed": 2000,
+				        "slidesToShow": 2
+				      }
+				    },
+				    {
+				      "breakpoint": 480,
+				      "settings": {
+				      	"arrows": true,
+				      	"autoplay": false,
+				      	"autoplaySpeed": 2000,
+				        "slidesToShow": 1
+				      }
+				    }
+		        ]
+		    }'
+		>
+		    {{#each products}}
+		        <li class="product" id="response_li">
+		                {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+		        </li>
+		    {{/each}}
+		</ul>
+	</div>
+</div> 
+{{/unless}}

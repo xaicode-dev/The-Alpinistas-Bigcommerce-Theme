@@ -1,0 +1,66 @@
+{{#unless theme_settings.hide_ourstory}}
+<div class="our-story">
+    <div class="container">
+        <div class="section-title">
+	        {{#if theme_settings.ourstory_title}}
+            <h2 class="section-heading">
+                {{theme_settings.ourstory_title}}
+            </h2>
+            {{/if}}
+            
+            {{#if theme_settings.ourstory-sub}}
+            <p class="section-sub-heading">
+                {{theme_settings.ourstory-sub}}
+            </p>
+            {{/if}}
+        </div>
+
+        <div class="our-story-element">
+            <div class="our-story-contents">
+                <div class="banners" data-banner-location="bottom">
+                    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                        <div data-event-type="promotion-click">
+                            {{{this.content}}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banners" data-banner-location="bottom">
+                    <div class="banner">
+                        <div class="our-story-img show">
+                            <img 
+							class="lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.ourstory_image}}" 
+							alt="{{theme_settings.ourstory_title}}" 
+							title="{{theme_settings.ourstory_title}}"
+							/>
+                        </div>
+                        <div class="our-story-content show">
+                            <div class="our-story-sub-content">
+                                {{#if theme_settings.ourstory_paragraph1}}
+                                	<p>{{theme_settings.ourstory_paragraph1}}</p>
+                                {{/if}} 
+                                
+                                {{#if theme_settings.ourstory_paragraph2}}
+                                	<p>{{theme_settings.ourstory_paragraph2}}</p>
+                                {{/if}} 
+                                
+                                {{#if theme_settings.ourstory_paragraph3}}
+                                	<p>{{theme_settings.ourstory_paragraph3}}</p>
+                                {{/if}}
+                                {{#if theme_settings.ourstory_link}}
+                                	<a href="{{theme_settings.ourstory_link}}"><span>read more</span></a>
+                                {{/if}}	
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/unless}}
+

@@ -1,0 +1,46 @@
+/******************** Custom CSS BEGIN *********************/
+
+
+span.save-price {
+    order: 4;
+    font-size: 15px;
+    font-weight: 700;
+    color: #6dd6da;
+}
+.save-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    span.save-price {
+    font-size: 18px;
+}
+}
+[data-sub-layout="a8a13fcf-fc5e-45d3-87a1-0695712c972e"] {
+    #sd-product-set-container-2eac4f43-72a0-4827-b103-fa7d82390453 {
+        .css-xh5ebv {
+            .css-nmhyd4, .css-113wrz1 {
+                height: 35px;
+                width: 25px;
+                @include breakpoint("small") {
+                    height: 40px;
+                    width: 30px;
+                }
+                @include breakpoint(1366px) {
+                    height: 50px;
+                    width: 40px;
+                }
+                svg {
+                    height: 14px;
+                    @include breakpoint("small") {
+                        height: 20px;
+                    }
+                    @include breakpoint(1366px) {
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/******************** Custom CSS END *********************/

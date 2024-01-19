@@ -1,0 +1,154 @@
+.slick-slide {float:left!important; }
+
+
+/* for custom variables */
+@import "variable";
+
+/* for general */
+@import "general";
+
+/* for navPages */
+@import "navpage";
+
+/* for navUser */
+@import "navuser";
+
+/* for banners */
+@import "banners";
+
+/* for header */
+@import "header"; 
+
+/* for footer */
+@import "footer";
+
+/* for home */
+@import "home";
+
+/* for container */
+@import "container";
+
+/* for slick-slider */
+@import "slick-slider";
+
+/* for product page */
+@import "productpage";
+
+/* for productgrid */
+@import "productgrid";
+
+/* for 3 variation comparison */
+@import "difference";
+
+/* for category page */
+@import "category";
+
+/* for product-filter */
+@import "product-filter-listing";
+
+/* for custom */
+@import "custom";
+
+
+/* for blog pages */
+@import "blog";
+
+.previewCartCheckout .button {
+    font-size: 15px !important;
+}
+@media (max-width: 720px){
+    .header-logo-image-unknown-size {
+  max-height: 3.15rem;
+}
+.footer-logo .header-logo__link {
+  max-width: 100%!important;
+}
+}
+
+@media ( min-width: 720px) {
+   .footer-logo .header-logo__link {
+  max-width: 25% !important;
+}
+ 
+}    
+
+@media ( max-width: 480px) {
+    .cart-additionalCheckoutButtons .FloatRight div, .previewCart-additionalCheckoutButtons .FloatRight div {
+     float: none!important; 
+     width:100%;
+    }
+    .PaypalCommerceButton {
+    width:100%!important;
+    }
+    .GooglePayContainer #googlepaystripe-container-1b37 {
+        width:100%!important;
+    }
+
+
+
+.PaypalCommerceContainer p.or-use-label {
+    text-align: center!important;
+}
+#checkout-customer-guest .checkoutRemote {
+    
+    margin-left:0.5rem!important;
+}
+.checkoutRemote {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.5rem!important;
+    margin-right: -0.5rem;
+}
+
+#googlepaystripeCheckoutButton {
+    margin-top:10px!important ;
+}
+
+}
+
+.productView-brand a {
+    font-size:19px!important;
+    color: #666666!important;
+}
+
+.gpay-button{
+    border-radius:0px!important;
+    
+}
+.button {
+  border-radius: 0px!important;
+}
+
+.previewCartCheckout .PaypalCommerceCreditButton{
+    width:100%!important;
+    margin-bottom: 5px!important;
+}
+
+.checkoutRemote {
+    margin:0!important;
+}
+.previewCartCheckout-additionalCheckoutButtons .CheckoutButton:last-child {
+    margin-bottom:0;
+}
+
+.PaypalCommerceContainer .PaypalCommerceButton {
+    margin-top: 0 !important;
+}
+
+#sd-simple-button-editable-08857b47-8074-46fd-9324-7ec0cb5dd21c{
+ border-radius: 0px!important; 
+}   
+.buttonLink a {
+    border-radius: 0px!important;
+}
+.cart-additionalCheckoutButtons,
+.previewCartCheckout-additionalCheckoutButtons{
+    display: none!important;
+}
+#checkout-customer-guest div p:last-of-type {
+  display: none!important;
+}
+span.save-price {
+    color: #539AA1!important;
+}
+

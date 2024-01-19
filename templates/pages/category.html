@@ -1,0 +1,158 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryId" category.id}}
+{{inject "bearerToken" settings.storefront_api.token}}
+{{inject "showSwatch" theme_settings.show_card_swatch}}
+{{#partial "page"}}
+
+</div>
+
+<!-- category banner section start -->
+{{#if theme_settings.category-image-display '==' 'category-banners'}}
+<div class="category-banner {{#if category.image}}with-cat-img{{else}}without-cat-img{{/if}}"> 
+{{/if}}
+
+{{#if theme_settings.category-image-display '==' 'category-thumbs'}}
+<div class="category-banner without-cat-img"> 
+{{/if}}
+
+	{{#if theme_settings.category-image-display '==' 'category-banners'}}
+	    {{#if category.image}}
+	        <div class="category-banner-img">
+	            {{> components/common/responsive-img
+	                image=category.image
+	                fallback_size=theme_settings.zoom_size
+	                lazyload=theme_settings.lazyload_mode
+	                class="category-header-image"
+	            }}
+	        </div>
+	    {{/if}}
+    {{/if}}
+    <div class="category-banner-title">
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+        {{/unless}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+</div>
+<!-- category banner section end -->
+
+<!-- category description section start -->
+{{#if category.description}}
+<div class="category-description">
+    <div class="category-description-content">
+        <div class="cat-desc-trim-content">
+            <div class="trim-description cat-desc-content">{{{category.description}}}</div>
+            <div class="box-shade"></div>
+        </div>
+        <div class="read_more_link"><a class="toggle-more" href="javascript:void(0)"></a></div>
+    </div>
+</div>
+{{/if}}
+<!-- category description section end -->
+
+<!-- filter and product listing section start -->
+<div class="container">
+	{{{region name="category_below_header"}}}
+    <!-- category top banner section start --> 
+    <div class="product-listing-banners">
+        {{#if banners.top}}
+        <div class="banners top-banner" data-banner-location="top">
+            {{#each (limit banners.top_metadata 1)}}
+            <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+                <div data-event-type="promotion-click">
+                    {{{this.content}}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+    <!-- category top banner section end -->
+
+    <div class="page">
+	    
+	    
+            <aside class="page-sidebar" id="faceted-search-container" {{#if theme_settings.hide_sidebar}}style="display: none;" {{/if}}>
+                {{> components/category/sidebar}}
+            </aside>
+
+
+        <main class="page-content" id="product-listing-container" {{#if theme_settings.hide_sidebar}}style="width: 100%;" {{/if}}>
+
+		{{#if theme_settings.category-image-display '==' 'category-thumbs'}}
+            {{#if category.subcategories}}
+            <ul class="brandGrid">
+		        {{#each category.subcategories}}
+		        	{{#if image}}
+			            <li class="brand">
+			                <article class="card {{#if alternate}}card--alternate{{/if}}">
+			                    <figure class="card-figure">
+			                        <a href="{{url}}">
+			                            <div class="card-img-container">
+			                                {{> components/common/responsive-img
+			                                    image=image
+			                                    class="card-image"
+			                                    fallback_size=../theme_settings.brand_size
+			                                    lazyload=../theme_settings.lazyload_mode
+			                                    default_image=../theme_settings.default_image_product
+			                                }}
+			                            </div>
+			                        </a>
+			                    </figure>
+			                    <div class="card-body">
+			                        <h4 class="card-title">
+			                            <a href="{{url}}">{{name}}</a>
+			                        </h4>
+			                    </div>
+			                </article>
+			            </li>
+		            {{/if}}
+		        {{/each}}
+		    </ul>
+            {{/if}}
+        {{/if}}    
+            
+            
+
+            {{#if category.products}}
+                {{> components/category/product-listing}}
+            {{else}}
+                <p class="no-pro-list"></p>
+            {{/if}}
+            {{{region name="category_below_content"}}}
+            
+            <!-- bottom banner start -->
+			{{#if banners.bottom}}
+			    {{#if settings.data_tag_enabled}}
+			        <div class="banners bottom-banner" data-banner-location="bottom">
+			            {{#each (limit banners.bottom_metadata 1)}}
+			                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+			                    <div data-event-type="promotion-click">
+			                        {{{this.content}}}
+			                    </div>
+			                </div>
+			            {{/each}}
+			        </div>
+			    {{else}}
+			        <div class="banners bottom-banner" data-banner-location="bottom">
+			            <div class="banner">
+			                {{{limit banners.bottom 1}}}
+			            </div>
+			        </div>
+			    {{/if}}
+			{{/if}}
+			<!-- bottom banner end -->
+
+            
+        </main>
+    </div>
+</div>
+<!-- filter and product listing section end -->
+{{/partial}}
+{{> layout/base}}

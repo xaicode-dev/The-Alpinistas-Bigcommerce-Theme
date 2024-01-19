@@ -1,0 +1,480 @@
+.navPages-container{
+	background-color: $header-bg;
+	
+	@include md{
+		background-color: $navpages-menu-bar-color;
+	}
+	
+	.navPages{
+		max-width: 100%;
+		padding: 1.5rem 1.5rem 5rem;
+		.navPages-list{
+			.navPages-item{
+				font-size: 0; 
+				.navPages-action{
+					width: calc(100% - 30px);
+					padding: spacing("half") 0;
+					font-family: $navpages-text;
+					font-size: $navpages-text-fontsize - 2;
+					color: $navpages-text-color; 
+					font-weight: 600;
+					display: inline-block;
+					&.on-sale{
+						
+						@include sm{
+    				    	color: $navpages-text-color;
+    				    }
+
+    				    @include md{
+    				    	color: $navPages-onSaleColor;
+    				    }
+    				    
+    				    &:hover{
+	    				    color: $navpages-text-hover-color;
+    				    }
+    				}
+					&.has-subMenu{
+						&.is-open{
+							color: $navpages-text-hover-color;
+							opacity: 1; 
+						}
+						.navPages-action-moreIcon{
+							display: none;
+							@include md{
+								display: block;
+								height: auto;
+								width: auto;
+								margin-left: 0;
+								position: absolute;
+								top: 50%;
+								transform: translateY(-50%);
+								right: 10px;
+							}
+							@include lg{
+								right: 15px;
+							}
+						}
+						@include md{
+							padding-right: 30px;
+							position: relative;
+						}
+						@include lg{
+							padding-right: 37px;
+						}
+						@include xl{
+							padding-right: 43px;
+						}
+					}
+					@include sm{
+						position: static;
+						border-bottom: none;
+						font-size: $navpages-text-fontsize - 1;
+					}
+					@include breakpoint("medium"){
+						text-transform: uppercase;
+					}
+					@include md{
+						width: auto;
+						font-size: $navpages-text-fontsize - 2;
+						padding: 16px 18px;
+					}
+					@include lg{
+						font-size: $navpages-text-fontsize - 1;
+						padding: 20px 27px;
+					}
+					@include xl{
+					    font-size: $navpages-text-fontsize;
+						padding: 24px 35px;
+					}
+					&:hover{
+						opacity: 1;
+						color: $navpages-text-hover-color;
+						@include md{
+							background-color: $navpages-background-color;
+						}
+					}
+
+					&.navPage-subMenu-action{
+						@include breakpoint("medium"){
+							margin-bottom: 0;
+							text-transform: uppercase;
+						}
+						@include md{
+							text-transform: uppercase;
+							width: auto;
+							display: inline-block;
+							padding: spacing("half") 0 spacing("quarter");
+							border-bottom: 1px solid stencilColor("navPages-subMenu-separatorColor");
+							margin-bottom: spacing("half") + spacing("quarter");
+						}
+					}
+					
+					
+					&.navPage-childList-action{
+						@include md{
+							width: auto;
+							padding: spacing("quarter") 0 (spacing("quarter") + spacing("quarter"));
+							font-weight: 400;
+							&.has-subMenu{
+								text-transform: uppercase;
+								border-bottom: none;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+				.custom_icon{
+					width: 30px;
+					padding: spacing("half");
+					.navPages-action-moreIcon{
+						width: 10px;
+						height: 10px;
+						margin-left: 0;
+						color: $navpages-text-color;
+						@include breakpoint("medium"){
+							transform: rotate(-90deg);
+							display: block;
+						}
+						@include md{
+							transform: none;
+							display: inline-block;
+						}
+					}
+					&.is-open{
+						.navPages-action-moreIcon{
+							transform: rotate(0deg);
+						}
+					}
+					@include md{
+						display: none;
+					}
+				}
+				.navPage-subMenu{
+					.navPage-subMenu-list{
+						margin: 0 0 0 10px;
+						.navPage-subMenu-item{
+							font-size: 0;
+													
+							.navPage-childList{
+								margin: 0 0 0 10px;
+								padding: 0;
+								border: none;
+								display: none;
+								&.is-open{
+									display: block;
+								}
+								.navPage-childList-item{
+									font-size: 0;
+								}
+								@include md{
+									display: block;
+									margin: 0;
+								}
+							}
+							@include breakpoint("medium"){
+								width: 100%;
+								float: none;
+								padding: 0 !important;
+							}
+							@include md{
+								@include grid-column(3);
+        						padding: 0 0.75rem !important;
+							}
+						}
+						@include breakpoint("medium"){
+							max-width: 100%;
+						}
+						@include md{
+							@include grid-row();
+				            border-left: 0;
+				            margin: 0 auto;
+				            padding-left: 0;
+						}
+						
+						
+						.navPage-subMenu-action, .navPage-childList-action{
+							text-transform: capitalize;
+							
+							@include breakpoint("medium"){
+								text-transform: uppercase;
+							}
+						}
+						
+						
+					}
+					.navPages-action-moreIcon{
+						@include md{
+							display: none;
+						}
+					}
+					@include breakpoint("medium"){
+						background-color: transparent;
+					    padding: 0 !important;
+					    position: inherit;
+					    text-align: left;
+					}
+					@include md{
+						background-color: stencilColor("navPages-subMenu-backgroundColor");
+				        padding: spacing("single") spacing("single") (spacing("single") + spacing("half")) !important;
+				        position: absolute;
+				        text-align: left;
+					}
+				}
+				@include breakpoint("medium"){
+					float: none;
+				}
+				@include md{
+					float: left;
+				}
+			
+				
+			}
+			&.navPages-list-depth-max{ 
+				.navPages-item{
+					.navPages-action{
+						width: 100%;
+						position: relative;
+						.navPages-action-moreIcon{
+							display: inline-block;
+							border: none;
+							height: 10px; 
+							width: 10px;
+							margin: 0;
+							padding: 0;
+							position: absolute;
+							top: 50%;
+							/*transform: translateY(-50%) rotate(-90deg);*/
+							right: spacing("half");
+							@include md{
+								width: auto;
+								height: auto;
+								right: spacing("half")
+							}
+							@include lg{
+								right: spacing("half")
+							}
+						}
+						&.is-open{
+							.navPages-action-moreIcon{
+								left: spacing("half");
+								/*transform: translateY(-50%) rotate(90deg);*/
+								@include md{
+									left: auto;
+									/*right: 10px;
+									transform: translateY(-50%) rotate(0);*/
+								}
+								@include lg{
+									/*right: 15px;*/
+								}
+							}
+						}
+						&.has-subMenu.is-root + .navPage-subMenu-horizontal{
+							margin: auto;
+						}
+					}
+					.navPage-subMenu-horizontal{
+						background-color: stencilColor("navPages-subMenu-backgroundColor");
+						@include md{
+							width: rem-calc(180px);
+						}
+						@include lg{
+							width: rem-calc(200px);
+						}
+						@include xl{
+							width: rem-calc(220px);
+						}
+						.navPage-subMenu-list{
+							box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.1);
+							margin: 0;
+							.navPage-subMenu-item-child{
+								position: relative;
+								&:hover{
+									background-color: rgba(stencilColor("navPages-color-hover"), 0.1);
+								}
+								.navPage-subMenu-action{
+									width: 100%;
+									border: none;
+									padding: 5px 10px;
+									margin-bottom: 0;
+									background-color: transparent;
+									.navPages-action-moreIcon{
+										transform: translateY(-50%) rotate(-90deg);
+									}
+									/*@include xl{
+										padding:24px;
+									}*/
+								}
+							}
+						}
+						&.is-open{
+							border-top: 1px solid $global-border-color;
+							padding: 0 !important;
+							border-left: none;
+							margin-top: -1px;
+							@include md{
+								margin-left: rem-calc(180px);
+							}
+							@include lg{
+								margin-left: rem-calc(200px);
+							}
+							@include xl{
+								margin-left: rem-calc(220px);
+							}
+						}
+					}
+				}
+			}
+			
+			
+
+			&.navPages-list--user{
+				@include md{
+					display: none;
+				}
+			}
+			@include breakpoint("medium"){
+				display: block;
+			}
+			@include md{
+				display: inline-block;
+			}
+			
+			
+			.navPages-dropdown{
+				display: inline !important;
+				
+				.navPages-action-moreIcon{
+					display: block;
+				    height: auto;
+				    width: auto;
+				    margin-left: 0;
+				    position: absolute;
+				    right:0px;
+				    top: auto !important;
+				    transform: rotate(0deg) !important;
+					right: spacing("half")
+				}
+				
+
+				.navPage-subMenu-horizontal{
+					.navPages-action-moreIcon{
+						transform: rotate(-90deg) !important;
+					}
+				}
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		.navPages-quickSearch{
+			.quickSearchResults{
+				margin-bottom: spacing("single");
+			}
+			@include breakpoint("medium"){
+				display: block;
+			}
+			@include md{
+				display: none;
+			}
+		}
+		@include breakpoint("medium"){
+			background-color: $body-section-bg;
+		    height: 100%;
+		    overflow-y: auto;
+		    text-align: left;
+		}
+		
+		@media only screen and (max-width:1024px){
+			background-color: $navPages-backgroundColor;
+		}
+		
+		@include md{
+			background-color: inherit;
+			overflow-y: visible;
+			padding:0;
+			text-align: center;
+		}
+	}
+	@include breakpoint("medium") {
+        bottom: 0;
+	    display: none;
+	    height: 100%;
+	    left: 0;
+	    position: absolute;
+	    right: 0;
+	    z-index: 10;
+    }
+    @include md{
+        display: block;
+        height: auto;
+        padding: 0;
+        position: relative;
+    }
+}
+.socialLinks{
+	margin-left: 0;
+}
+.navPages-list+.navPages-list{
+	border-color: $global-border-color;
+}
+
+
+/* Add styling for theme editor when they choose how many dropdown columns they want across the site */
+@media (min-width: 1024px) {
+	.menu-3-columns{
+		ul.level-1{
+			.navPage-subMenu-item{
+				width:33% !important;
+			}
+		}
+	}
+	.menu-4-columns{
+		ul.level-1{
+			.navPage-subMenu-item{
+				width:25% !important;
+			}
+		}
+	}
+	.menu-5-columns{
+		ul.level-1{
+			max-width:calc(1440px + 4rem) !important;
+			.navPage-subMenu-item{
+				width:20% !important;
+			}
+		}
+	}
+	.menu-6-columns{
+		ul.level-1{
+			max-width:100% !important;
+			.navPage-subMenu-item{
+				width:16.6% !important;
+			}
+		}
+	}
+	.menu-7-columns{
+		ul.level-1{
+			max-width:100% !important;
+			.navPage-subMenu-item{
+				width:14.2% !important;
+			}
+		}
+	}
+	.menu-8-columns{
+		ul.level-1{
+			max-width:100% !important;
+			.navPage-subMenu-item{
+				width:12.5% !important;
+			}
+		}
+	}
+}
+
+
+
+

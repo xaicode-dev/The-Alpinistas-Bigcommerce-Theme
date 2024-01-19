@@ -1,0 +1,42 @@
+{{#if product_results.products}}
+
+    <ul class="search-cust productList" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
+        {{#each product_results.products}}
+        {{#if @index '<' 3 }}
+            <li class="product">
+                <article class="listItem">
+                    <img class="listItem-image lazyload search-img show" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    </figure> 
+                    <div class="listItem-details show">
+                                <h4 class="listItem-title">
+                                    <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{name}}</a>
+                                </h4>
+                                <div class="listItem-actions">
+                                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                                    {{#if price}}
+                                        <div class="listItem-price">{{> components/products/price price=price}}</div>
+                                    {{/if}}
+                                    {{else}}
+                                    {{> components/common/login-for-pricing}}
+                                {{/or}}
+                        </div>
+                        </div> 
+                </article>
+            </li>
+        {{/if}}
+        {{/each}}
+        <!--<li class="view-quick-result-desktop">
+            <a href="javascript:void(0)">view all</a>
+        </li>
+        <li class="view-quick-result-mobile">
+            <a href="javascript:void(0)">view all</a>
+        </li>-->
+    </ul>
+    
+{{else}}
+    <p class="quickSearchMessage">
+        <span>
+            {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+        </span>
+    </p>
+{{/if}}

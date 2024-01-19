@@ -1,0 +1,51 @@
+/*!
+ * @name        easyzoom
+ * @author      Matt Hinchliffe
+ * @modified    Friday, December 30th, 2022
+ * @version     2.6.0
+ */
+
+/*!
+ * JavaScript Cookie v2.2.1
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+
+/*!
+ * in-view 0.6.1 - Get notified when a DOM element enters or exits the viewport.
+ * Copyright (c) 2016 Cam Wiegert <cam@camwiegert.com> - https://camwiegert.github.io/in-view
+ * License: MIT
+ */
+
+/*!
+ * jQuery.tabbable 1.0 - Simple utility for selecting the next / previous ':tabbable' element.
+ * https://github.com/marklagendijk/jQuery.tabbable
+ *
+ * Includes ':tabbable' and ':focusable' selectors from jQuery UI Core
+ *
+ * Copyright 2013, Mark Lagendijk
+ * Released under the MIT license
+ *
+ */
+
+/*!
+ * pace.js v1.2.4
+ * https://github.com/CodeByZach/pace/
+ * Licensed MIT © HubSpot, Inc.
+ */
+
+/*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+
+/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
+
+/*! npm.im/object-fit-images 3.2.4 */
+
+/**
+ * SVGInjector v1.1.3 - Fast, caching, dynamic inline SVG DOM injection library
+ * https://github.com/iconic/SVGInjector
+ *
+ * Copyright (c) 2014-2015 Waybury <hello@waybury.com>
+ * @license MIT
+ */

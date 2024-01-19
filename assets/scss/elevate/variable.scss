@@ -1,0 +1,313 @@
+/*************** THEME GLOBAL VARIABLES START ***************/ 
+/* primary button variables start */
+$primary-btn-text: stencilColor("button--primary-color");
+$primary-btn-text-hover: stencilColor("button--primary-colorHover");
+$primary-btn-text-active: stencilColor("button--primary-colorActive");
+$primary-btn-bg: stencilColor("button--primary-backgroundColor");
+$primary-btn-bg-hover: stencilColor("button--primary-backgroundColorHover");
+$primary-btn-bg-active: stencilColor("button--primary-backgroundColorActive");
+$primary-btn-border: stencilColor("button--primary-borderColor");
+$primary-btn-border-hover: stencilColor("button--primary-borderColorHover");
+$primary-btn-border-active: stencilColor("button--primary-borderColorActive");
+/* primary button variables end */  
+/* secondary button variables start */
+$secondary-btn-text: stencilColor("button--default-color");
+$secondary-btn-text-hover: stencilColor("button--default-colorHover");
+$secondary-btn-text-active: stencilColor("button--default-colorActive");
+$secondary-btn-bg: stencilColor("button--default-backgroundColor");
+$secondary-btn-bg-hover: stencilColor("button--default-backgroundColorHover");
+$secondary-btn-bg-active: stencilColor("button--default-backgroundColorActive");
+$secondary-btn-border: stencilColor("button--default-borderColor");
+$secondary-btn-border-hover: stencilColor("button--default-borderColorHover");
+$secondary-btn-border-active: stencilColor("button--default-borderColorActive");
+/* secondary button variables end */
+/* button fontsize start */
+$button-small-fontsize: stencilNumber("fontSize-root") - 2;
+$button-default-fontsize: stencilNumber("fontSize-root");
+$button-large-fontsize: stencilNumber("fontSize-root") + 5;
+$button-extralarge-fontsize: stencilNumber("fontSize-root") + 10;
+/* button fontsize end */
+/* link variables start */
+$link-color: stencilColor("color-textLink");
+$link-hover-color: stencilColor("color-textLink--hover");
+$link-active-color: stencilColor("color-textLink--active");
+/* link variables start */
+/* body variables start */
+$body-bg: stencilColor("body-bg");
+$body-section-bg: stencilColor("body-section-bg");
+$body-fontsize: stencilNumber("fontSize-root");
+$body-fontfamily: stencilFontFamily("body-font");
+$body-text-color: stencilColor("color-textBase");
+$body-secondary-text-color: stencilColor("color-textSecondary");
+/* body variables end */
+/* footer variables start */
+$footer-bg: stencilColor("footer-backgroundColor");
+$footer-fontsize: stencilNumber("fontSize-footer");
+$footer-fontfamily: stencilFontFamily("footer-font");
+$footer-text-color: stencilColor("footer-textcolor");
+$footer-link-color: stencilColor("footer-linkcolor");
+$footer-link-hover-color: stencilColor("footer-link-hovercolor");
+$footer-bottom-bg: stencilColor("footer-bottom-section-backgroundColor");
+$footer-bottom-text-color: stencilColor("footer-bottom-section-textcolor");
+/* footer variables end */
+/* navpages variables start */
+$navpages-menu-bar-color: stencilColor("navpages-menu-bar-color");
+$navpages-text: stencilFontFamily("navPages-text-font");
+$navpages-text-fontsize: stencilNumber("navPages-text-fontSize");
+$navpages-text-color: stencilColor("navPages-color");
+$navpages-text-hover-color: stencilColor("navPages-color-hover");
+$navpages-background-color: stencilColor("navPages-subMenu-backgroundColor");
+/* navpages variables end */
+/*navuser variables start*/
+$navuser-text-color: stencilColor("navUser-color");
+$navuser-text-hover-color: stencilColor("navUser-color-hover");
+$header-cart-icon-color: stencilColor("header-cart-icon-color");
+$navPages-onSaleColor: stencilColor("navPages-onSaleColor");
+/*navuser variables end*/
+/* global variables start */
+$global-border-color: stencilColor("container-border-global-color-base");
+$placeholder-color: stencilColor("placeholder-font-color"); 
+$loader-color: stencilColor("pace-progress-backgroundColor");
+$theme-white: stencilColor("color-white");
+$theme-black: stencilColor("color-black");
+$input-text-color: stencilColor("input-font-color");
+$input-border: stencilColor("input-border-color");
+$dark-grey: stencilColor("color-primaryDarker");
+$form-label-color: stencilColor("form-label-font-color");
+$productView-info-value: stencilColor("product-info-value");
+$breadcrumbs-color: stencilColor("breadcrumbs_color");
+$instagram-section: stencilColor("instargam-section-color");
+$our-story-link-color:stencilColor("ourstory-link-color");
+$our-story-link-hover-color:stencilColor("ourstory-link-hover-color");
+$our-story-text-color: stencilColor("ourstory-desc-color");
+$sidebar-heading: stencilColor("sidebar-heading");
+$usp-title-color: stencilColor("usp-title-color");
+$usp-subtitle-color: stencilColor("usp-desc-color");
+$usp-border-color: stencilColor("usp-border-color");
+$usp-bg-color: stencilColor("usp-bg-color");
+/* global variables end */
+
+/*************** THEME GLOBAL VARIABLES END ***************/
+
+/*************** THEME SECTION VARIABLES START ***************/
+/* logo variables start */
+$theme-large-logo: stencilNumber("logo_fontSize");
+$theme-medium-logo: stencilNumber("logo_fontSize") - 6;
+$theme-small-logo: stencilNumber("logo_fontSize") - 20;
+$logo-color: stencilColor("storeName-color");
+/* logo variables end */ 
+/* banner section variable start */
+$banner-fontfamily: stencilFontFamily("banner-font");
+$banner-fontsize: stencilNumber("fontSize-banner");
+$banner-color: stencilColor("banner-text-color");
+$banner-hover-color: stencilColor("banner-link-color");
+/* banner section variable end */
+/* slider section variable start */
+$carousel-bg: stencilColor("carousel-bgColor");
+$carousel-bgColor-opacity: stencilNumber("carousel-bgColor-opacity");
+$carousel-arrow-color: stencilColor("carousel-arrow-color");
+$carousel-arrow-bg: stencilColor("carousel-arrow-bgColor");
+$carousel-arrow-border: stencilColor("carousel-arrow-borderColor");
+$carousel-dot-bg: stencilColor("carousel-dot-bgColor");
+$carousel-dot-border: stencilColor("carousel-dot-color");
+$carousel-dot-active: stencilColor("carousel-dot-color-active");
+$carousel-title: stencilFontFamily("carousel-title-font");
+$carousel-title-fontsize: stencilNumber("fontSize-carousel-title");
+$carousel-title-color: stencilColor("carousel-title-color");
+$carousel-description: stencilFontFamily("carousel-description-font");
+$carousel-description-fontsize: stencilNumber("fontSize-carousel-description"); 
+$carousel-description-color: stencilColor("carousel-description-color");
+$carousel-button-text-color: stencilColor("carousel-button-text-color");
+$carousel-button-text-color-hover: stencilColor("carousel-button-text-color-hover");
+$carousel-button-color: stencilColor("carousel-button-color");
+$carousel-button-color-hover: stencilColor("carousel-button-color-hover");
+/* slider section variable end */
+/* section heading variable start*/
+$section-title: stencilFontFamily("main-headings-font");
+$section-title-color: stencilColor("main-color-textHeading");
+$section-title-fontsize: stencilNumber("main-headings-fontSize"); 
+$section-sub-title: stencilFontFamily("sub-headings-font");
+$section-sub-title-color: stencilColor("color-textSubheading");
+$section-sub-title-fontsize: stencilNumber("sub-headings-fontSize");
+/* section heading variable end*/
+/* shop by category section start */
+$shopbycat-title: stencilFontFamily("shopbycategory-title-font"); 
+$shopbycat-title-color: stencilColor("shopbycategory-title-color");
+$shopbycat-title-shadow-color: stencilColor("shopbycategory-title-shadow-color");
+$shopbycat-title-fontsize: stencilNumber("shopbycategory-title-fontSize"); 
+$shopbycat-link: stencilFontFamily("shopbycategory-link-font");
+$shopbycat-link-color: stencilColor("shopbycategory-link-color");
+$shopbycat-link-hover-color: stencilColor("shopbycategory-link-hover-color");
+$shopbycat-link-bg-color: stencilColor("shopbycategory-link-bg-color");
+$shopbycat-link-bg-hover-color: stencilColor("shopbycategory-link-bg-hover-color");
+$shopbycat-link-fontsize: stencilNumber("shopbycategory-link-fontSize");
+/* shop by category section end */
+/* recent updates section start */
+$recent-main-fontsize: stencilNumber("blog-title-fontSize");
+$recent-main-color: stencilColor("blog-title-color");
+$recent-sub-fontsize: stencilNumber("blog-summary-fontSize");
+/* recent updates section end */
+/* category page start */
+$category-main-title-color: stencilColor("color_category_title");
+$category-main-title-font: stencilFontFamily("category-title-font");
+$category-main-title-fontsize: stencilNumber("fontSize-category-title");
+$category-header-bg: stencilColor("category-header-bg");
+$category-section-bg: stencilColor("category-section-bg");
+/* category page end */
+/* page-heading start */
+$page-heading-font: stencilFontFamily("headings-font");
+$page-heading-fontsize: stencilNumber("headings-fontSize");
+$page-heading-color: stencilColor("color-textHeading");
+/* page-heading end */
+/* product page start */
+$product-title-font: stencilFontFamily("product-title-font");
+$product-title-fontsize: stencilNumber("product-title-fontSize");
+$product-title-color: stencilColor("product-title-color");
+$product-body-text-color: stencilColor("product-body-color");
+$product-share-icon: stencilColor("product-share-icon");
+$product-desc-color: stencilColor("product-desc-color");
+/* product page end */
+/* product card start */
+$card-title: stencilColor("card-title-color");
+$card-title-hover: stencilColor("card-title-color-hover");
+$card-figcaption-btn: stencilColor("card-figcaption-button-color");
+$card-figcaption-btn-hover: stencilColor("card-figcaption-button-color-hover");
+$card-figcaption-btn-bg: stencilColor("card-figcaption-button-background");
+$card-figcaption-btn-bg-hover: stencilColor("card-figcaption-button-background-hover");
+$card-figcaption-btn-border: stencilColor("card-figcaption-button-border");
+$card-figcaption-btn-border-hover: stencilColor("card-figcaption-button-border-hover");
+$card-price-color: stencilColor("card-price-color");
+$card-price-font: stencilFontFamily("product_card_price");
+/* product card end */
+/* product card (quick search) start */
+$quick-card-text: stencilColor("card--alternate-color");
+$quick-card-text-hover: stencilColor("card--alternate-color--hover");
+$quick-card-bg: stencilColor("card--alternate-backgroundColor");
+$quick-card-border: stencilColor("card--alternate-borderColor");
+$swatch-size: stencilString("swatch_option_size");
+$card-bg: stencilColor("product-card-bg");
+$card-bg-hover: stencilColor("product-card-bg-hover");
+/* product card (quick search) end */
+/*************** THEME SECTION VARIABLES END ***************/
+
+/*************** THEME MIXIN FUNCTION START ***************/
+/* screensize variables and mixin function start */
+$screen-sm-min: 768px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1366px;
+$screen-xl-min: 1850px;
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   } 
+}
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) { 
+       @content;
+   }
+}
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+/* screensize variables and mixin function end */
+
+/*************** THEME MIXIN FUNCTION END ***************/
+
+/*************** THEME CLASSES START ***************/
+.show{
+	display: inline-block;
+	vertical-align: middle;
+}
+.button{ 
+	border-radius: 50px; 
+}
+.theme-btn-primary,.swal2-modal .swal2-confirm,.modal--alert .button-container .confirm{ 
+	font-family: $body-fontfamily;
+	color: $primary-btn-text;
+	font-size: $body-fontsize;
+	font-weight: 700;
+	background-color: $primary-btn-bg;
+	border: 1px solid $primary-btn-border;
+	text-transform: uppercase;
+	padding: 8px 16px;
+	line-height: 1;
+	@include sm{
+		padding: 10px 20px;
+	}
+	@include xl{
+		font-size: $body-fontsize + 1;
+		padding: 12px 23px;	
+	}
+	&.button--small{
+		font-size: $body-fontsize - 1;
+	}
+	&:hover,
+	&:focus,
+	&:active{
+		color: $primary-btn-text-hover;
+		background-color: $primary-btn-bg-hover;
+		border: 1px solid $primary-btn-border-hover;
+	}
+}
+.theme-btn-secondary,.swal2-modal .swal2-cancel{
+	font-family: $body-fontfamily;
+	color: $secondary-btn-text;
+	font-size: $body-fontsize;
+	font-weight: 700;
+	background-color: $secondary-btn-bg;
+	border: 1px solid $secondary-btn-border;
+	text-transform: uppercase;
+	padding: 8px 16px;
+	line-height: 1;
+	@include sm{
+		padding: 10px 20px;
+	} 
+	@include xl{
+		padding: 12px 23px;	
+		font-size: $body-fontsize + 1;
+	}
+	&.button--small{
+		font-size: $body-fontsize - 1;
+	}
+	&:hover,
+	&:focus,
+	&:active{
+		color: $secondary-btn-text-hover;
+		background-color: $secondary-btn-bg-hover;
+		border: 1px solid $secondary-btn-border-hover;
+	}	
+}
+.theme-icon{
+	line-height: 1;
+}
+.theme-icon::before{
+	font-family: "icomoon";
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-style: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+}
+.icon-multimedia::before{
+	font-size: 12px;
+}
+/*************** THEME CLASSES END ***************/
+
+/*************** AUTOPARTS VARIATION VARIABLES START ***************/
+.autoparts{
+	.button{ 
+		border-radius: 5px; 
+	}
+}
+/*************** AUTOPARTS VARIATION VARIABLES END ***************/

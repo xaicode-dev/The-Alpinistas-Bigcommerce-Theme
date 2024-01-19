@@ -1,0 +1,19 @@
+{{#if children}}
+    <a class="{{#if name '==' 'On Sale'}}on-sale{{/if}} navPages-action navPages-action-depth-max has-subMenu is-root{{#if is_active}} activePage{{/if}}" href="{{url}}">
+        {{name}} 
+        <i class="icon navPages-action-moreIcon" aria-hidden="true">
+            <span class="icon-multimedia theme-icon" data-icon="&#xe902;"></span>
+        </i>
+    </a>
+    {{> components/elevate/navigation-dropdown}}
+{{else}}
+    {{#if name '==' 'On Sale'}}
+        <a class="on-sale navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+    {{else}}
+        <a class="navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+    {{/if}}
+{{/if}}
+
+ 
+ 
+ 

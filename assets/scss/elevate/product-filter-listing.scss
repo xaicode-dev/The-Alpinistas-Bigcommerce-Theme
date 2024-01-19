@@ -1,0 +1,778 @@
+/********** Page-sidebar style start **********/
+.category{
+	.page-sidebar{
+		background-color: transparent;
+		padding: 0 0.75rem;
+		nav{
+			background-color: $category-section-bg;
+			padding: 10px 0;
+			@inclued md{
+				padding: 20px 0;
+			}
+			@include lg{
+				padding: 30px 0;
+			} 
+			@include xl{
+				padding: 35px 0;
+			}
+		}
+		#facetedSearch{
+			padding: 0; 
+		}
+	}
+}
+.page-sidebar{
+	@include breakpoint("medium")
+	{
+		width: 200px;
+	}
+	@include md{
+		width: 250px;
+	}
+	@include lg{
+		width: 295px;
+	}
+	.banners{
+		display: none;
+		@include breakpoint("medium"){
+			display: block;
+			margin-top: 10px; 
+		}
+		@include lg{
+			margin-top: 15px;
+		}
+		@include xl{
+			margin-top: 20px;
+		}
+	}
+}
+.sidebarBlock{
+	border-bottom: 2px solid stencilColor("body-bg");
+	padding: 0 10px 20px 10px;
+	display:none;
+	
+	@include breakpoint("medium"){
+		display:block;
+	}
+	
+	
+	a{
+		text-decoration: none;
+	}
+	.sidebarBlock-heading{
+		font-size: $body-fontsize;
+		font-weight: bold;
+		color: $sidebar-heading;
+		margin-bottom: 10px;
+		@include md{
+			font-size: $body-fontsize + 1;
+			margin-bottom: 15px;
+		}
+		@include xl{
+			font-size: $body-fontsize + 2;
+			margin-bottom: 20px;
+		}
+	}
+	&.facetedSearch{
+		padding: 0 10px;
+		@include breakpoint("medium"){
+			padding: 0 0 20px 0;
+		}
+	}
+	&:last-child{
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+	@include lg{
+		padding: 0 15px 30px 15px;
+	}
+	@include xl{
+		padding: 0 20px 35px 20px;
+	}
+}
+.facetedSearch-navList{
+	.accordion{
+		margin: 0;
+		.accordion-block{
+			.accordion-navigation{
+				.accordion-title{
+					font-size: $body-fontsize;
+					font-weight: bold;
+					color: $sidebar-heading;
+					margin-bottom: 0;
+					@include md{
+						font-size: $body-fontsize + 1;
+					}
+					@include xl{
+						font-size: $body-fontsize + 2;
+					}				
+				}
+				.accordion-navigation-actions{
+					top: 50%;
+					transform: translateY(-50%);
+					.facetedSearch-clearLink{
+						color: $link-color;
+						text-decoration: none;
+						&:hover{
+							color: $link-hover-color;
+						}
+					}
+					&:hover{
+						svg{
+							fill: $link-hover-color;
+						}
+					}
+					svg{
+						fill: $sidebar-heading;
+					}
+				}
+			}
+			.accordion-content{
+				&.facetedSearch-content--rating{
+					.navList{
+						.navList-item{
+							.navList-action{
+								padding-left: 0;
+							}
+						}
+					}
+				}
+				.toggleLink{
+					padding: 5px 0 5px 20px;
+					@include xl{
+						padding: 6px 0 6px 20px;	
+					}
+					.toggleLink-text{
+						color: $link-hover-color;
+						text-decoration: underline;
+					}
+					&:hover{
+						.toggleLink-text{
+							color:$link-color;
+						}
+					}
+				}
+				.navList{
+					@include breakpoint("medium"){
+						margin-top: 10px;
+					}
+					@include lg{
+						margin-top: 15px;
+					}
+					@include xl{
+						margin-top: 20px;
+					}
+				}
+				.form{
+					margin-top: 10px;
+					.form-fieldset{
+						.form-minMaxRow{
+							font-size: 0;
+							.form-field{
+								float: none;
+								width: 50%;
+								padding: 5px;
+								@include md{
+									padding: 7px;
+								}
+								@include lg{
+									padding: 8px;
+								}
+								.form-input--small{
+									height: 32px;
+									@include sm{
+										height: 36px;
+									}
+									@include xl{
+										height: 40px;	
+									}
+								}
+								.button{
+									text-transform: capitalize;
+									padding: 8px 16px;
+									font-weight: normal;
+									font-size: $body-fontsize - 1;
+									border-radius: 0;
+									&.form-input-clear{
+										background-color: $theme-white;
+										border: 1px solid $body-text-color;
+										color: $body-text-color;
+										&:hover{
+											background-color: $body-text-color;
+											color: $theme-white;
+											border: 1px solid $body-text-color;
+										}
+									}
+									@include sm{
+										padding: 10px 20px;
+									}
+									@include lg{
+										font-size: $body-fontsize;
+									}
+									@include xl{
+										padding: 12px 24px;	
+									}
+								}
+							}
+						}
+					}
+					@include lg{
+						margin-top: 15px;
+					}
+					@include xl{
+						margin-top: 20px;
+					}
+				}
+			}
+			&:first-child{
+				margin-top: 0;
+			}
+			&:last-child{
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+			@include breakpoint("medium"){
+				border-bottom: 2px solid stencilColor("body-bg");
+				margin-top: 20px;
+				padding: 0 10px 20px 10px;
+			}
+			@include lg{
+				margin-top: 30px;
+				padding: 0 15px 30px 15px;
+			}
+			@include xl{
+				margin-top: 35px;
+				padding: 0 20px 35px 20px;
+			}
+		}
+	}
+}
+.navList{
+	.navList-item{
+		font-size: 0;
+		.navList-icon{
+			width: 15px;
+			height: 15px;
+			margin-left: 0;
+			display: inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+			transform: rotate(0deg);
+			svg{
+				fill: $link-color;
+			}
+			&.is-open{
+				transform: rotate(90deg);
+			}
+		}
+		.navList-action{
+			color: $link-color;
+			text-transform: capitalize;
+			font-size: $body-fontsize - 1;
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+			padding: 5px 0 5px 20px;
+			&.is-selected{
+				color: $link-hover-color;
+				&::before{
+					border-color: $link-hover-color;
+				}
+				&::after{
+					transform: scale(1) translateY(-50%);
+				}
+			}
+			&.has-subMenu{
+				width: calc(100% - 15px);
+				padding: 5px 0 5px 5px;
+			}
+			&.navList-action--checkbox{
+				margin-bottom: 0;
+				&::before{
+					border-radius:0;
+					width: 10px;
+					height: 10px;
+					transform: translateY(-50%);
+					margin-top: 0px;
+				}
+				&::after{
+					left: 0px;
+					background-size: 14px;
+					margin-top: -2px;
+				}
+			}
+			&:hover{
+				color: $link-hover-color;
+			}
+			.navList-action-close{
+				background-color: $primary-btn-bg;
+				border: 1px solid $primary-btn-bg;
+				padding: 1px;
+				svg{
+					fill: $theme-white;
+				}
+				&:hover{
+					background-color: transparent;
+					svg{
+						fill: $link-hover-color;
+					}
+				}
+			}
+			@include lg{
+				font-size: $body-fontsize;
+			}
+			@include xl{
+				padding: 6px 0 6px 20px;
+				&.has-subMenu{
+					padding: 6px 0 6px 5px;
+				}
+			}
+		}
+		.navList-childlist{
+			display: none;
+			&.is-open{
+				display: block;
+				margin-left: 25px;
+			}
+		}
+		&.is-open{
+			a{
+				&.is-open{
+					color: $link-hover-color;
+				}
+			}
+		}
+	}
+}
+.sidebarBlock + .sidebarBlock{
+	border-top: 0;
+	margin-top: 10px;
+	padding-top: 0; 
+	@include md{
+		margin-top: 20px;
+	}
+	@include lg{
+		margin-top: 30px;
+	}
+	@include xl{
+		margin-top: 35px;
+	}
+}
+.facetedSearch-toggle + .facetedSearch-navList, 
+.sidebarBlock + .facetedSearch-navList{
+	margin-top: 10px;
+	@include md{
+		margin-top: 20px;
+	}
+	@include lg{
+		margin-top: 30px;
+	}
+	@include xl{
+		margin-top: 35px;
+	}
+}
+.toggleLink{
+	color: $link-color;
+	font-size: $body-fontsize - 1;
+	&:hover{
+		color: $link-hover-color;
+	}
+	@include lg{
+		font-size: $body-fontsize;
+	}
+}
+.facetedSearch-toggle{
+	margin-bottom: 0;
+	font-size: 0;
+	span{
+		font-size: $body-fontsize - 1;
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+		.toggleLink-text--on{
+			display: none;
+		}
+	}
+}
+.inlineList--labels{
+	li{
+		.facetLabel{
+			border-radius: 0;
+			background-color: $primary-btn-bg;
+			color: $primary-btn-text;
+			border:1px solid $primary-btn-border;
+			svg{
+				fill: $primary-btn-text;
+			}
+			&:hover{
+				background-color: $primary-btn-bg-hover;
+				color: $primary-btn-text-hover;
+				border-color: $primary-btn-border;
+				svg{
+					fill: $primary-btn-text-hover;
+				}
+			}
+		}
+	}
+}
+
+/* Hide the new page builder sidebar banners on mobile as they were sitting above content and pushing page down too far */
+@media (max-width: 800px){
+	[data-content-region="sidebar_below_categories--global"] {
+	  display:none;
+	}
+
+	[data-content-region="sidebar_below_categories"] {
+	  display:none;
+	}
+}
+
+
+/********** Page-sidebar style end **********/
+
+/********** Product Listing style start **********/
+
+/* counter,pagination and sort by style start*/
+.product-listing-filter-section{
+	font-size: 0;
+	margin: 15px 0;
+	.product-listing-filter-left{
+		width: 100%;
+		font-size: 0;
+		margin-bottom: 10px;	
+		.product-listing-counter{
+			width: auto;
+			padding-right: 10px;
+			.pagination-count{
+				color: stencilColor("pagination-color");
+				font-size: $body-fontsize - 1;
+				padding: 4px 0;
+				@include sm{
+					padding: 8px 0;
+				}
+				@include lg{
+					font-size: $body-fontsize;
+					padding: 8px 0;
+				}
+			}
+			@include sm{
+				width: auto;
+			}
+			@include md{
+				padding-right: 15px;
+			}
+			@include lg{
+				padding-right: 20px;
+			}
+		}
+		.product-listing-pagination{
+			width: auto;
+			border-left: 1px solid stencilColor("pagination-color");
+			padding-left: 10px;
+			@include sm{
+				width: auto;
+			}
+			@include md{
+				padding-left: 15px;
+			}
+			@include lg{
+				padding-left: 20px;
+			}
+		}
+		@include sm{
+			width: 55%;
+			margin-bottom: 0;
+		}
+		@include md{
+			width: 60%;
+		}
+	}
+	.product-listing-filter-right{
+		width: 100%;
+		.product-listing-sort-by{
+			text-align: left;
+			margin-right: -2px;
+			width: 100%;
+			@include breakpoint("small"){
+				width: auto;
+				text-align: right;
+			}
+		}
+		.product-view-button{
+		    /*display: none;*/
+			width: 30%;
+			.product-view-btn{
+				cursor: pointer;
+				padding-right: 10px;
+				
+				display:none;
+				
+				@include breakpoint("small"){
+					display:inline-block;
+				}
+			
+				svg{
+					fill: $body-text-color;
+					width: 20px;
+					max-height: 20px;
+					@include sm{
+						width: 24px;
+						max-height: 24px;
+					}
+				}
+				&.is-active{
+					svg{
+						fill: $link-hover-color;
+					}
+				}
+				&:hover{
+					svg{
+						fill: $link-hover-color;
+					}
+				}
+				&:last-child{
+					@include sm{
+						padding-right: 26px;
+					}
+					@include lg{
+						padding-right: 46px;
+					}	
+				}
+				@include lg{
+					padding-right: 20px;
+				}
+			}
+			@include sm{
+				width: auto;
+			}
+		}
+		
+		@include sm{
+			width: 45%;
+			text-align: right;
+		}
+		@include md{
+			width: 40%;
+		}
+	}
+	@include md{
+		margin: 20px 0;
+	}
+	@include xl{
+		margin: 25px 0;
+	}
+}
+.pagination{
+	.pagination-list{
+		margin-bottom: 0;
+		text-align: left;
+		&.pagination-list--small{
+			.pagination-item{
+				color: stencilColor("pagination-color");
+			}
+		}
+		.pagination-item{
+			.pagination-link{
+				color: stencilColor("pagination-color");
+				&:hover{
+					color: $link-hover-color;
+				}
+				@include lg{
+					font-size: $body-fontsize + 2;
+				}
+			}
+			&.pagination-item--current{
+				border-color: $primary-btn-border;
+				border-radius: 0;
+				.pagination-link{
+					color: $link-hover-color;
+					padding: 4px 9px;
+				}
+				&:hover{
+					background-color: $primary-btn-bg;
+					.pagination-link{
+						color: $theme-white;
+					}
+				}
+			}
+			&.pagination-item--next,&.pagination-item--previous{
+				float: none;
+				.pagination-link{
+					.icon{
+						width: 15px;
+						height: 15px;
+						margin-top: 0;
+						svg{
+							fill: stencilColor("color-greyDark");
+						}
+					}
+				}
+				&:hover{
+					.pagination-link{
+						color: $link-hover-color;
+						.icon{
+							svg{
+								fill: $link-hover-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}	
+}
+.actionBar{
+	margin: 0;
+	.form-fieldset{
+		float: none;
+		.form-field{
+			margin-bottom: 0;
+			border: none;
+			background-color: stencilColor("body-bg");
+			.form-label{
+				font-size: $body-fontsize - 1;
+				color: stencilColor("pagination-color");
+				padding-left: 0;
+				padding-right: 10px;
+			}
+			.form-select{
+				border: 1px solid $global-border-color;
+				border-radius: 0;
+				margin-right: 2px;
+				color: $input-text-color;
+				height: auto;
+				font-size: $body-fontsize - 1;
+				padding: 7px 10px;
+				&.form-select--small{
+					background-position: right 5px center;
+				}
+				@include sm{
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
+.no-pro-list{
+	margin: 10px 0;
+	color: $body-text-color;
+	font-size: $body-fontsize - 2;
+	line-height: 1.4;
+	@include md{
+		margin: 15px 0;
+		font-size: $body-fontsize - 1;
+	}
+	@include lg{
+		margin: 20px 0;
+		font-size: $body-fontsize;
+	}
+	@include xl{
+		margin: 25px 0;
+	}
+}
+/* counter,pagination and sort by style end*/
+.page-sidebar.u-hiddenVisually + .page-content{
+	width: 100%;
+	#search-results-content{
+		margin: 10px 0;
+		.actionBar{
+			.form-fieldset{
+				.form-field{
+					.form-select{
+						width: 14.28571rem;
+					}
+				}
+			}
+		}
+		ul{
+			margin: 10px 0;
+			strong{
+				margin-bottom: 10px;
+				display: inline-block;
+			}
+			@include md{
+				margin: 15px 0;
+			}
+			@include xl{
+				margin: 20px 0;
+			}
+		}
+		@include sm{
+			margin: 15px 0;
+		}
+		@include md{
+			margin: 20px 0;
+		}
+		@include lg{
+			margin: 25px 0;
+		}
+		@include xl{
+			margin: 30px 0;
+		}
+	}
+	.search-suggestion{
+		.suggestion-title{
+			margin-bottom: 10px;
+		}
+		ul{
+			li{
+				line-height: 1.4;
+			}
+		}
+	}
+}
+
+.page-sidebar + .page-content{
+	@include breakpoint("medium")
+	{
+		width: calc(100% - 200px);
+	}
+	@include md{
+		width: calc(100% - 250px);	
+	}
+	@include lg{
+		width: calc(100% - 295px);	
+	} 
+	.product-view-mode{
+		margin: 0 -5px;
+		.productGrid{
+			display: none;
+			&.is-open{
+				margin: 0;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.product{
+				width: 49.9%;
+				@include sm{
+					width: 33.29%;
+				}
+				@include xl{
+					width: 24.9%;
+				}
+			}
+		}
+		.productList{
+			display: none;
+			&.is-open{
+				display: block;
+			}
+		}
+		@include md{
+			margin: 0 -8px;
+		}
+		@include lg{
+			margin: 0 -10px;
+		}
+	}
+}
+.productList .product + .product{
+	margin-top: 10px;
+	@include md{
+		margin-top: 16px;
+	}
+	@include lg{
+		margin-top: 20px;
+	}
+}
+/********** Product Listing style end **********/

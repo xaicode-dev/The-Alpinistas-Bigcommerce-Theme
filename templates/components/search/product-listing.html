@@ -1,0 +1,36 @@
+<div class="product-listing-filter-section no-pagination">
+    <div class="product-listing-filter-left show">
+        <div class="product-listing-pagination show"> 
+            {{> components/common/paginator pagination.product_results}}     
+        </div>
+    </div> 
+    <div class="product-listing-filter-right show">
+        <div class="product-view-button show">
+            <a href="javascript:void(0)" class="product-view-btn grid-view view-button-grid show is-active" data-view="product-grid-view">
+                <svg><use xlink:href="#icon-grid-view"></use></svg>
+            </a>
+            <a href="javascript:void(0)" class="product-view-btn list-view view-button-list show" data-view="product-list-view">
+                <svg><use xlink:href="#icon-list-view"></use></svg>
+            </a>
+        </div>
+        <div class="product-listing-sort-by show">
+            {{> components/products/filter sort=pagination.product_results.sort}}
+        </div>
+    </div>
+</div>
+
+<div class="product-view-mode">
+    <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Search Results" {{/if}} data-product-compare>
+        {{> components/products/grid products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings}}
+
+    </form>
+</div>
+
+<div class="product-listing-filter-section">
+    <div class="product-listing-filter-left show">
+        <div class="product-listing-pagination show">
+            {{> components/common/paginator pagination.product_results}}   
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+<!-- related products section start -->
+{{#if product.related_products}}
+    <div class="related-products-section">
+        <div class="section-title">
+            <h2 class="section-heading"> 
+                {{lang 'products.related_products'}}
+            </h2>
+            {{#if theme_settings.related-sub}}
+                <p class="section-sub-heading">
+                    {{theme_settings.related-sub}}
+                </p>
+            {{/if}}
+        </div>
+        <div class="related-products-list">
+            {{#if settings.data_tag_enabled}}
+                {{> components/elevate/products-carousel products=product.related_products columns=5 list="Related Products"}}
+            {{else}}
+                {{> components/elevate/products-carousel products=product.related_products columns=5}}
+            {{/if}}
+        </div>
+    </div>
+{{/if}}
+<!-- related products section end -->
+
+<!-- customer also section start -->
+{{#if product.similar_by_views}}
+    <div class="customer-also-section">
+        <div class="section-title">
+            <h2 class="section-heading"> 
+                {{lang 'products.similar_by_views'}}
+            </h2>
+            {{#if theme_settings.customer-also-sub}}
+                <p class="section-sub-heading">
+                    {{theme_settings.customer-also-sub}}
+                </p>
+            {{/if}}
+        </div>
+        <div class="customer-also-products-list">
+            {{> components/elevate/products-carousel products=product.similar_by_views columns=5 list="Customers Also Viewed"}}
+        </div>
+    </div>
+{{/if}}
+<!-- customer also section end -->

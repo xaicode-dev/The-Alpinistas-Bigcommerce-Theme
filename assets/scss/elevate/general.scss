@@ -1,0 +1,2217 @@
+*{ 
+  box-sizing: border-box; 
+  line-height: 1.4;
+}
+ul{
+    @include bulletedList;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: spacing("single");
+}
+ol{
+    @include numberedList;
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: spacing("single");
+}
+p{ 
+  margin-bottom: $paragraph-margin-bottom;
+}
+a{
+  text-decoration: underline;
+  color: $link-color;
+  &:hover,
+  &:focus,
+  &:active{
+    color: $link-hover-color;
+  }
+}
+:focus{
+  outline: none;
+}
+body{
+  font-family: $body-fontfamily;
+  font-weight: 400;
+    &.hasAdminBar{
+        .header{
+            padding-top: 0;
+        }
+    }
+}
+.body{
+  margin-bottom: spacing("double") + spacing("single");
+  margin-top: spacing("single");
+  min-height: 513px;
+  @include xl{
+    margin-bottom: spacing("double") + spacing("single");
+  }
+}
+.page{
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+  @include headingBase;
+  @include heading-smallBase;
+  margin-top: $heading-marginTop;
+} 
+.alignleft{
+  margin-bottom: 1rem;
+  text-align: left;
+  display: block;
+}
+.aligncenter{
+  display: block;
+  text-align: center;
+}
+.alignright{
+  margin-bottom: 1rem;
+  text-align:  right;
+  display: block;
+}
+.clear{
+  clear: both;
+  display: block;
+}
+.alignleft_img{
+  float: left;
+  margin-bottom: 20px;
+  @include breakpoint("small"){
+    padding-right: 20px;
+  }
+} 
+.alignright_img{
+  float: right;
+  margin-bottom: 20px;
+  @include breakpoint("small"){
+    padding-left: 20px;
+  }
+}
+
+table{
+  width: 100%;
+  margin-bottom: 20px;
+  tbody{
+    tr{
+      th,td{
+        border:1px solid $global-border-color;
+        padding: 15px;
+        text-align: left;
+        color: $body-text-color;
+      }
+      th{
+        background-color: $body-section-bg;
+        color: $body-text-color;
+      }
+    }
+  }
+}
+
+/* Form styling start */
+.form-input:disabled{
+  background-color: transparent;
+}
+.form-input,.form-select, .form-select--date{
+  border-radius: 0;
+  color: $input-text-color; 
+  line-height: 1;
+  &::placeholder{
+    font-family: $body-fontfamily;
+    font-size: $body-fontsize - 2;
+    color: $placeholder-color;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+.form-select--small, .form-select--date,.form-select{
+  background-color: $input-bg-color;
+  border: {
+      color: $input-border-color;
+      style: $input-border-style;
+      width: $input-border-width;
+  }
+}
+.form-select{
+  max-width: 100%;
+}
+.form-label{
+  font-weight: 700;
+  font-size: $body-fontsize;
+  color: $form-label-color;
+  line-height: 1;
+  small{
+    color: stencilColor("color-error");
+    font-size: $body-fontsize - 4;
+    font-weight: 500;
+    vertical-align: top;
+    float: none;
+  }
+}
+.form-field{
+  margin: 0 0 15px;
+  padding: 0;
+  @include md{
+    margin: 0 0 20px;
+  }
+  @include xl{
+    margin: 0 0 30px;
+  }
+}
+.form-column{
+  .form-field{
+    padding: 0;
+    &.form-field-group{
+      padding: 10px;
+    }
+  }
+}
+.form-actions{
+  .button{
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+.form-prefixPostfix .button{
+  width: auto;
+  margin: 0 0 0 10px;
+  @include md{
+    margin: 0 0 0 15px;
+  }
+  @include lg{
+    margin: 0 0 0 20px;
+  }
+}
+.form-checkbox + .form-label::before{
+  border-radius: 0;
+  top: 0;
+}
+.form-radio + .form-label::before{
+  top: 0;
+}
+.form-checkbox + .form-label::after,.form-radio + .form-label::after{
+  top: 1px;
+}
+.form-checkbox + .form-label:last-child, .form-radio + .form-label:last-child{
+  margin-bottom: 0;
+}
+.form-checkbox + .form-label, .form-radio + .form-label{
+  margin-bottom: spacing("single");
+}
+.form-radio:checked + .form-option{
+  box-shadow: none;
+}
+/* Form styling end */
+
+
+.button[disabled]:hover{
+  background-color: stencilColor("button--disabled-backgroundColor");
+  color: stencilColor("button--disabled-color");
+  border-color: stencilColor("button--disabled-borderColor");
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+/******************** Breadcrumbs style start *********************/
+.breadcrumbs{
+  text-align: left;
+  margin-bottom: spacing("single");
+  .breadcrumb{
+    .breadcrumb-label{
+      text-transform: capitalize;
+      font-family: $body-fontfamily;
+      color: $breadcrumbs-color;
+      font-size: $body-fontsize - 2;
+      text-decoration: none;
+      &:hover{
+        color: $link-hover-color;
+      }
+      @include md{ 
+        font-size: $body-fontsize - 1;
+      }
+      @include lg{
+        font-size: $body-fontsize;
+      }
+    }
+    &.is-active{
+      .breadcrumb-label{
+        color: $link-hover-color;
+      }
+      &:hover{
+      	.breadcrumb-label{
+	        color: $link-color;
+	      }	
+      }
+    }
+    &:before{
+      border-color: $breadcrumbs-color;
+    }
+  }
+}
+/********************* Breadcrumbs style end *********************/
+
+/********************* Page-heading style start *********************/
+.page-heading{
+	font-family: $page-heading-font;
+	color: $page-heading-color;
+	font-size: $page-heading-fontsize - 8;
+	margin-bottom: 15px;
+	font-weight: 700;
+	@include sm{
+		font-size: $page-heading-fontsize - 6;
+		margin-bottom: 20px;
+	}
+	@include md{
+		font-size: $page-heading-fontsize - 4;
+		margin-bottom: 25px;
+	}
+	@include lg{
+		font-size: $page-heading-fontsize - 2;
+		margin-bottom: 30px;
+	}
+	@include xl{
+		font-size: $page-heading-fontsize;
+		margin-bottom: 40px;
+	}
+}
+/********************* Page-heading style end *********************/
+
+/********************* panel section style start *********************/
+.panel{
+	margin: 0;
+	.panel-body{
+		background-color: $body-section-bg;
+		border-top: 1px solid $global-border-color;
+		padding: 10px;
+		margin: 10px 0;
+		@include breakpoint("medium"){
+			margin: 0;
+		}
+		@include md{
+			padding: 15px;
+		}
+		@include lg{
+			padding: 20px;
+		}
+	}
+}
+/********************* panel section style end *********************/
+
+/********************* social links style start *********************/
+.socialLinks{
+	line-height: 1;
+	.socialLinks-item{
+		margin: 0 4px 0 0;
+		width: auto;
+		.icon{
+			width: 30px;
+			height: 30px;
+			border: 1px solid $global-border-color;
+			border-radius: 100%;
+			position: relative;
+			svg{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				fill: $product-share-icon;
+				width: 20px;
+				height: 20px;
+				padding: 2px;
+			}
+		}
+		&:hover{
+			.icon{
+				svg{
+					fill: $theme-white;
+				}
+			}
+			.icon--facebook{		
+				background-color: stencilColor("product-facebook-color");
+				border-color: stencilColor("product-facebook-color");
+			}
+			.icon--email{
+				background-color: stencilColor("product-email-color"); 
+				border-color: stencilColor("product-email-color"); 
+			}
+			.icon--print{
+				background-color: stencilColor("product-print-color");
+				border-color: stencilColor("product-print-color");
+			}
+			.icon--twitter{
+				background-color: stencilColor("product-twitter-color"); 
+				border-color: stencilColor("product-twitter-color"); 
+			}
+			.icon--linkedin{
+				background-color: stencilColor("product-linkedin-color");
+				border-color: stencilColor("product-linkedin-color");
+			}
+			.icon--google{
+				background-color: stencilColor("product-google-color"); 
+				border-color: stencilColor("product-google-color"); 
+			}
+			.icon--pinterest{
+				background-color: stencilColor("product-pinterest-color");
+				border-color: stencilColor("product-pinterest-color");
+			}
+		}
+		@include breakpoint("small"){
+			margin: 0 7px 0 0;
+		}
+	}
+}
+/********************* social links style end *********************/
+
+
+/******************* SEARCH PAGE STYLE START *******************/
+
+.dropdown--quickSearch .quick-search{
+	background-color: transparent;
+	display:none;
+	visibility: hidden;
+	@include breakpoint("small"){
+		display:block;
+		visibility: visible;
+	}
+}
+
+.quickSearchSubmitButton{
+	float: right;
+    font-size: 14px;
+    font-weight:bold;
+    position: relative;
+    top: -33px;
+	right:10px;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    background:none;
+   
+	@include breakpoint("medium"){
+	     top: -33px;
+	}
+	@include breakpoint("large"){
+	     top: -33px;
+	}
+}
+
+/* nav section style start */
+.navBar--sub{
+	margin-bottom: 20px;
+	.navBar-section{
+		.navBar-item{
+			margin-bottom: 10px;
+			font-size: $body-fontsize - 1;
+			a{
+				color: $link-color;
+				font-size: $body-fontsize - 1;
+				@include breakpoint("medium"){
+					font-size: $body-fontsize - 3;
+				}
+				@include md{
+					font-size: $body-fontsize - 1;
+				}
+				@include breakpoint("large"){
+					font-size: $body-fontsize;
+				}
+				@include lg{
+					font-size: $body-fontsize + 1;
+				}
+				@include xl{
+					font-size: $body-fontsize + 2;
+				}
+				&.navBar-action-color--active{
+					color: $link-hover-color;
+					text-decoration: underline;
+				}
+				&:hover{
+					color: $link-hover-color;
+					text-decoration: underline;
+				}
+			}
+			@include breakpoint("medium"){
+				font-size: $body-fontsize - 3;
+			}
+			@include md{
+				font-size: $body-fontsize - 1;
+			}
+			@include breakpoint("large"){
+				font-size: $body-fontsize;
+			}
+			@include lg{
+				font-size: $body-fontsize + 1;
+			}
+			@include xl{
+				font-size: $body-fontsize + 2;
+			}
+			&.is-active{
+				color: $link-hover-color;
+				border: none;
+				text-decoration: underline;
+			}
+			@include breakpoint("medium"){
+				margin: 0 2px;
+			}
+			@include md{
+				margin: 0 5px;
+			}
+			@include lg{
+				margin: 0 10px;
+			}
+			@include xl{
+				margin: 0 15px;
+			}
+		}
+	}
+}
+/* nav section style end */
+
+/* sidebar section style start */
+#facetedSearch{
+	background-color: $category-section-bg;
+	padding: 10px 0;
+	@include md{
+		padding: 20px 0;
+	}
+	@include lg{
+		padding: 30px 0;
+	}
+	@include xl{
+		padding: 40px 0;
+	}
+}
+.search{
+	.page{
+		@include grid-row(
+	        $behavior: nest
+	    );
+	}
+}
+/* sidebar section style end */
+/******************* SEARCH PAGE STYLE END *******************/
+
+/******************* BRAND PAGE STYLE START *******************/
+.brand{
+	.page{
+		@include grid-row(
+	        $behavior: nest
+	    );
+	}
+	
+	.card{
+		border:none;
+	}
+	.card-img-container{
+		max-width: get-width(stencilString('productgallery_size'));
+	}
+}
+.brandGrid{
+	margin: 0 -5px;
+  	@include md{
+    	margin: 0 -8px;
+  	}
+  	@include lg{
+    	margin: 0 -10px;
+  	}
+	.brand{
+		width: 50%;
+	    padding: 5px 5px 10px 5px;
+	    @include breakpoint("small"){
+	      width: 50%;
+	    }
+	    @include sm{
+	      width: 33.33%;
+	    }
+	    @include md{
+	      padding: 5px 8px 16px 8px;
+	    }
+	    @include lg{
+	      width: 25%;
+	      padding: 5px 10px 20px 10px; 
+	    }
+		.card{
+			.card-figure{
+				padding: 0;
+				.card-img-container{
+					max-width: get-width(stencilString('brand_size'));
+					margin: 0 auto;
+				}
+			}
+			.card-body{
+				.card-title{
+					margin-bottom: 0;
+					min-height: auto;
+			      a{
+			        font-size: $body-fontsize;
+			        font-weight: 300;
+			        color: $card-title;
+			        &:hover{
+			          color: $card-title-hover;
+			        }
+			        @include sm{
+			          font-size: $body-fontsize + 1;
+			        }
+			        @include xl{
+			          font-size: $body-fontsize + 2;
+			        }
+			      }
+			    }
+			}
+			&:hover{
+				.card-body{
+					margin-bottom: 0;
+					transform: none;
+				}
+			}
+		}
+	}
+}
+.brand .card-img-container:after{
+	padding-bottom: 100%;
+}
+/******************* BRAND PAGE STYLE END *******************/
+
+
+/******************* BLOG-LISTING PAGE & BLOG-DETAIL PAGE STYLE START *******************/
+.blog{
+	margin-bottom: 0;
+	.blog-post-body{
+		.blog-header{
+			.blog-title{
+				margin-bottom: 10px;
+				@include md{
+					margin-bottom: 15px;
+				}
+				@include xl{
+					margin-bottom: 20px;
+				}
+			}
+			.blog-date,.blog-author{
+				color: $body-text-color;
+				margin-bottom: 10px;
+				@include md{
+					margin-bottom: 15px;
+				}
+				@include xl{
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.blog-post{
+			font-size: $body-fontsize - 1;
+			line-height: 1.4;
+			@include sm{
+				font-size: $body-fontsize;
+			}
+			@include lg{
+				font-size: $body-fontsize + 1;
+			}
+			@include xl{
+				font-size: $body-fontsize + 2;
+			}
+			a{
+				color: $link-hover-color;
+				text-decoration: underline;
+				text-transform: capitalize;
+				font-weight: 500;
+
+				&:hover{
+					color: $link-color;
+				}
+			}
+		}
+	}
+	.pagination,.addthis_toolbox{
+		margin: 20px 0 0;
+		@include md{
+			margin: 25px 0 0;
+		}
+		@include lg{
+			margin: 30px 0 0;
+		}
+	}
+	.tags{
+		margin-top: 15px;
+		margin-bottom: 0;
+		@include md{
+			margin-top: 20px;
+		}
+		@include lg{
+			margin-top: 25px;
+		}
+		@include xl{
+			margin-top: 30px;
+		}
+		.tag{
+			a{
+				color: $link-hover-color;
+				text-decoration: underline;
+				text-transform: capitalize;
+				font-weight: 600;
+
+				&:hover{
+					color: $link-color;
+				}
+			}
+		}
+	}
+}
+.blog + .blog{
+	margin-top: 30px;
+	padding-top: 30px;
+	@include md{
+		margin-top: 40px;
+		padding-top: 40px;
+	}
+	@include xl{
+		margin-top: 50px;
+		padding-top: 50px;
+	}
+}
+/******************* BLOG-LISTING PAGE & BLOG-DETAIL PAGE STYLE END *******************/
+
+
+/******************* CONTACT-US PAGE STYLE START *******************/
+#contact-us-page{
+	.form{
+		margin: 10px 0 0;
+		@include sm{
+			margin: 20px 0 0;
+		}
+		@include md{
+			margin: 30px 0 0;
+		}
+		@include xl{
+			margin: 40px 0 0;
+		}
+	}
+	#contact-us-success{
+		text-align: center;
+		a{
+			color: $link-hover-color;
+			text-decoration: underline;
+			&:hover{
+				color: $link-color;
+			}
+		}
+	}
+}
+.g-recaptcha{
+	overflow: hidden;
+	iframe{
+		transform: scale(0.8);
+		transform-origin: left;
+		@include lg{
+			transform: scale(1);
+		}
+	}
+}
+/******************* CONTACT-US PAGE STYLE END *******************/
+
+
+/******************* SITEMAP PAGE STYLE START *******************/
+.sitemap-list{
+	font-size: 0;
+	margin-left: 0;
+	.sitemap-label{
+		margin: 10px 0;
+		@include sm{
+			margin: 0 0 15px;
+		}
+		@include lg{
+			margin: 0 0 20px;	
+		}
+	}
+	.sitemap-item{
+		width: 100%;
+		@include sm{
+			width: 33.33%;
+			vertical-align: top;
+		}
+		.sitemap-links{
+			text-transform: capitalize;
+			display: block;
+			margin: 0 0 10px 15px;
+			position: relative;
+			font-size: $body-fontsize - 1;
+			text-decoration: none;
+			@include md{
+				font-size: $body-fontsize;
+			}
+			@include xl{
+				font-size: $body-fontsize + 1;
+			}
+			&:before{
+				position: absolute;
+				font-family: "icomoon";
+			    content: '\e902';
+			    speak: none;
+			    font-weight: normal;
+			    font-variant: normal;
+			    text-transform: none;
+			    font-style: normal;
+			    line-height: 1;
+			    -webkit-font-smoothing: antialiased;
+			    font-size: 10px;
+			    top: 50%;
+			    left: -15px;
+			    transform: translateY(-50%) rotate(-90deg);
+			}
+		}
+		.sitemap-sub-list{
+			margin-left: 15px;
+		}
+	}
+}
+/******************* SITEMAP PAGE STYLE END *******************/
+
+
+/******************* 404 ERROR PAGE STYLE START *******************/
+.u-textAlignCenter{
+	margin-bottom: 10px;
+	@include sm{
+		margin-bottom: 15px;
+	}
+	@include lg{
+		margin-bottom: 20px;
+	}
+}
+/******************* 404 ERROR PAGE STYLE END *******************/
+
+
+/******************* LOGIN PAGE STYLE START *******************/
+body.login{
+	margin: 0;
+	max-width: 100%;
+}
+.login{
+	margin: 0 auto;
+	.login-row{
+		margin: 0 auto;
+		max-width: 100%;
+		&.account-disabled{
+			max-width: 100%;
+			.login-form{
+				width: 100%;
+			}
+			@include breakpoint("medium"){
+				max-width: 50%;
+			}
+		}
+		.login-form{
+			margin: 0;
+			@include sm{
+				width: 50%;
+				padding-left: 0;
+			}
+			.form-actions{
+				margin: 0 0 10px;
+				text-align: left;
+				.button{
+					vertical-align: middle;
+				}
+				.forgot-password{
+					margin: 0 0 0 10px;
+					vertical-align: middle;
+					width: auto;
+					text-decoration: none;
+				}
+			}
+		}
+		.new-customer{
+			margin-top: 20px;
+			@include sm{
+				width: 50%;
+				margin-top: 0;
+				padding-right: 0;
+			}
+			.panel{
+				background-color: $body-section-bg;
+				padding: 15px;
+				@include lg{
+					padding: 20px;
+				}
+				@include xl{
+					padding: 25px;
+				}
+				.panel-header{
+					padding: 0;
+					background-color: transparent;
+					margin-bottom: 10px;
+				}
+				.panel-body{
+					margin: 0;
+					border-top: none;
+					background-color: transparent;
+					padding: 0;
+					.new-customer-intro{
+						margin-bottom: 10px;
+					}
+					.new-customer-fact-list{
+						margin-bottom: 10px;
+						.new-customer-fact{
+							list-style-position: outside;
+							list-style-type: disc;
+							line-height: 1.4;
+						}
+					}
+					.button{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+/******************* LOGIN PAGE STYLE END *******************/
+
+
+/******************* CREATE ACCOUNT PAGE STYLE START *******************/
+.account{
+	.account-body{
+		margin: 0;
+	}
+}
+/******************* CREATE ACCOUNT PAGE STYLE END *******************/
+
+
+/******************* ACCOUNT CREATED PAGE STYLE START *******************/
+.createaccount_thanks{
+	p{
+		margin-bottom: 10px;
+		@include sm{
+			margin-bottom: 15px;
+		}
+		@include lg{
+			margin-bottom: 20px;
+		}
+	}
+}
+/******************* ACCOUNT CREATED PAGE STYLE START *******************/
+
+
+/******************* FORGOT PASSWORD PAGE STYLE START *******************/
+.forgot-password-form{
+	margin: 10px 0 0;
+	@include sm{
+		margin: 20px 0 0;
+	}
+	@include md{
+		margin: 30px 0 0;
+	}
+	@include xl{
+		margin: 40px 0 0;
+	} 
+}
+/******************* FORGOT PASSWORD PAGE STYLE END *******************/
+
+
+/******************* RESET PASSWORD PAGE STYLE START *******************/
+.forgotpassword{
+	.account--fixedSmall {
+	    @include breakpoint("medium") {
+	        margin: 0 auto;
+	        width: grid-calc(6, $total-columns);
+	    }
+	}
+}
+/******************* RESET PASSWORD PAGE STYLE END *******************/
+
+/******************* COMMON WEB PAGE STYLE START *******************/
+body.page{
+	.page-content{
+		ul{
+			list-style-position: inherit;
+		}
+	}
+	
+	.page-content--centered{
+		padding-left: 0;
+	    padding-right: 0;
+	    width: 100%;
+	}
+}
+/******************* COMMON WEB PAGE STYLE END *******************/
+
+
+/******************* ALERT BOX STYLE START *******************/
+.alertBox--info{
+	color: $body-text-color;
+	background-color: $body-section-bg;
+	border: 1px solid $global-border-color;
+	border-radius: 0;
+	margin-bottom: spacing("single");
+	svg{
+		fill: $body-text-color;
+	}
+}
+/******************* ALERT BOX STYLE END *******************/
+
+
+/******************* ACCOUNT PAGES STYLE START *******************/
+.account-body{
+	.account-heading{
+		display: none;
+	}	
+}
+.account-sidebar-block{
+	.account-heading{
+		display: block;
+	}
+}
+.account-sidebar-block + .account-sidebar-block{
+	margin-top: spacing("single");
+}
+.account-heading{
+	border-bottom: none;
+	font-size: $body-fontsize + 8;
+	@include breakpoint("medium"){
+		display: block;
+	}
+	@include md{
+		font-size: $body-fontsize + 10;
+	}
+	@include xl{
+		font-size: $body-fontsize + 12;	
+	}
+}
+.panel--address{
+	border: 1px solid $global-border-color;
+	margin: 0 0 15px;
+	@include breakpoint("small"){
+		margin: 0;
+	}
+	.panel-body{
+		border: none;
+		margin: 0;
+		.address-details{
+			.address-label{
+				color: $body-text-color;
+			}
+		}
+	}	
+	.form-actions{
+		.button + .button{
+			margin-left: 10px;
+		}
+	}
+}
+.address-title{
+	text-transform: capitalize;
+}
+.address-details{
+	li{
+		line-height: 1.4;
+	}
+}
+.account_recentitems{
+	.productGrid{
+		display: flex;
+		flex-wrap: wrap;
+		.product{
+			height: auto;
+			width: 100%;
+			@include breakpoint("small"){
+				width: 50%;
+			}
+			@include sm{
+				width: 33.33%;
+			}
+			@include md{
+				width: 25%;
+			}
+			@include lg{
+				width: 20%;
+			}
+			.card{
+				height: 100%;
+			}
+		}
+	}
+}
+.wishlist{
+	.productGrid{
+		display: flex;
+		flex-wrap: wrap;
+		.product{
+			height: auto;
+			padding-bottom: 90px;
+			width: 100%;
+			@include breakpoint("small"){
+				width: 50%;
+			}
+			@include sm{
+				width: 33.33%;
+			}
+			@include md{
+				width: 25%;
+			}
+			@include lg{
+				width: 20%;
+			}
+			@include xl{
+				padding-bottom: 105px;
+			}
+			.card{
+				height: 100%;
+			}
+			.form{
+				text-align: center;
+				margin: 20px 0 0;
+				.button{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.account{
+		.share-wishlist{
+		    display: block;
+		    width: 100%;
+		    margin: 0 auto 15px;
+		    @include breakpoint("medium"){
+		    	margin: 0 auto 25px;
+		    }
+		    .panel-body{
+		    	h5{
+		    		margin-bottom: 10px;
+		    		@include md{
+		    			margin-bottom:15px;
+		    		}
+		    		@include lg{
+		    			margin-bottom:20px;
+		    		}
+		    	}
+		    }
+		}
+	}
+}
+
+.wishlists,.shippingaddressform{
+	.form-actions{
+		.button{
+			margin-top: 0;
+		}
+	}
+	table{
+		tr{
+			td{
+				border: none;
+			}
+		}
+	}
+}
+
+.wishlists{
+	.table--line tr td + td{
+		padding-left: spacing("third");
+		@include sm{
+			padding-left: spacing("single");
+		}	
+	}
+}
+
+.account-list{
+	.account-listItem{
+		.account-product{
+			.account-product-figure{
+				&:after{
+					padding-bottom: 0;
+				}
+			}
+			.account-product-body{
+				.account-orderStatus{
+					.account-orderStatus-label{
+						color: $form-label-color;
+						background-color: $body-section-bg;
+					}
+					.account-orderStatus-action{
+						margin-left: 0;
+						color: $link-color;
+						&:hover{
+							color: $link-hover-color;
+						}
+					}
+				}
+				.account-product-title{
+					a{
+						text-decoration: underline;
+					}
+				}
+				.account-product-description{
+					margin-bottom: 20px;
+				}
+				.account-product-description + .definitionList{
+					margin-top: 0;
+				}
+				.account-product-details{
+					.account-product-detail{
+						.account-product-detail-heading{
+							color: $section-title-color;
+						}
+					}
+				}
+			}
+		}
+		&:first-child{
+			padding-top: 0;
+		}
+	}
+}
+.account_new_return{
+	.table{
+		margin: 0 0 20px;
+		@include md{
+			margin: 0 0 30px;
+		}
+		@include xl{
+			margin: 0 0 40px;
+		}
+		.return-itemPrice{
+			margin: 10px 0;
+		}
+		tr{
+			td{
+				border: none;
+			}
+		}
+	}
+}
+.account_inbox{
+	.send-msg{
+		margin-bottom: 10px;
+		@include md{
+			margin-bottom: 15px;
+		}
+	}
+	.account-list{
+		margin-bottom: 10px;
+		@include md{
+			margin-bottom: 15px;
+		}
+		@include xl{
+			margin-bottom: 20px;
+		}
+		.account-listItem{
+			padding: spacing("single") 0 spacing("double");
+			@include breakpoint("small"){
+				padding: spacing("single") 0;
+			}
+			.account-orderStatus{
+				bottom: 20px;
+				@include breakpoint("small"){
+					bottom: 0;
+				}
+			}
+		}
+		.account-message{
+			.account-product-title{
+				color: $form-label-color;
+				font-weight: 400;
+			}
+			p{
+				color: $body-text-color;
+				margin-bottom: 0;
+			}
+		}
+	}
+	.form-actions{
+		.button{
+			margin-top: 0;
+		}
+	}
+}
+
+.account-orderTotal{
+	.account-orderTotal-key{
+		font-weight: 500;
+		color: $form-label-color;
+		font-size: $body-fontsize - 1;
+		@include lg{
+			font-size: $body-fontsize;
+		}
+	}
+	.account-orderTotal-value{
+		font-size: $body-fontsize + 2;
+        color: $section-sub-title-color;
+        font-weight: 700;
+        @include sm{
+          font-size: $body-fontsize + 4;
+        }
+        @include xl{
+          font-size: $body-fontsize + 6;
+        }	
+	}
+}
+/******************* ACCOUNT PAGES STYLE END *******************/
+
+
+/******************* ORDER DETAILES PAGE STYLE START *******************/
+.account_order{
+	.account-body{	
+		.account-heading{
+			margin-bottom: 0;
+		} 
+		.account-content{
+			.definitionList{
+				.definitionList-value{
+					float:left;
+					@include breakpoint("small"){
+						float: none;
+					}
+				}
+			}
+			.account-orderTotal{
+				width: 100%;
+				@include breakpoint("small"){
+					width: 66.66667%;
+				}	
+			}
+		}
+		.definitionList{
+			margin-bottom: 0;
+			font-size: 0;
+			.definitionList-key{
+				color: $form-label-color;
+			}
+			.definitionList-value,
+			.definitionList-key{
+				margin: 0 0px 5px 0;
+				font-size: $body-fontsize - 1;
+				display: inline-block;
+				vertical-align: middle;
+				width: 50%;
+				@include md{
+					margin: 0 0px 10px 0;
+				}
+				@include lg{
+					font-size: $body-fontsize;
+					margin: 0 0px spacing("single") 0;
+				}
+			}
+			.definitionList-value{
+				color: $body-text-color;
+				font-weight:500;
+			}
+			.order-payments-description{
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+				margin: 0 0px spacing("single") 0;
+				color: $form-label-color;
+				font-size: $body-fontsize - 1;
+				@include lg{
+					font-size: $body-fontsize;
+				}
+			}
+			.order-payments-value{
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+				font-size: $body-fontsize - 1;
+				@include lg{
+					font-size: $body-fontsize;
+				}	
+			}
+		}
+		.account-orderTotal{
+			margin:0;
+			.account-orderTotal-key{
+				color: $body-text-color;
+				font-weight: 700;
+			}
+		}
+	}
+	.navBar--sub .navBar-item.is-active > .navBar-action{
+		color: $link-hover-color;
+	}
+	.account-product-body{
+		padding-bottom: 0;
+	}
+}
+
+/******************* ORDER DETAILES PAGE STYLE END *******************/
+
+/******************* ORDER RETURNS ITEM PAGE STYLE START *******************/
+.account_new_return{
+	.account-body{
+		.account-content{
+			table{
+				.table-tbody{
+					.return-itemName{
+						.return-itemTitle{
+							font-weight: 700;
+						}
+					}
+					.definitionList{
+						margin: spacing("half") 0;
+						@include md{
+							margin: spacing("single") 0;
+						}
+						.definitionList-label,
+						.definitionList-description{
+							display:inline-block;
+							vertical-align: middle;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************* ORDER RETURNS ITEM PAGE STYLE END *******************/
+
+/******************* ORDER RETURNS  PAGE STYLE START *******************/
+.account_returns{
+	.account-list{
+		.account-listItem{
+			&:last-child{
+				border-bottom: none;
+			}
+			.account-product{
+				.account-product-body{
+					.account-product-detail--full{
+						span{
+							line-height: 1.5;
+						}
+					}
+					.definitionList-key{
+						color: $form-label-color;
+					}
+					.definitionList-value,
+					.definitionList-key{
+						margin: 5px 5px 5px 0;
+						font-size: $body-fontsize - 1;
+						@include md{
+							margin: 10px 10px 10px 0;
+						}
+						@include lg{
+							font-size: $body-fontsize;
+							margin: 10px 10px spacing("single") 0;
+						}
+					}
+					.definitionList-value{
+						color: $body-text-color;
+						font-weight:500;
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************* ORDER RETURNS  PAGE STYLE END *******************/
+
+
+
+/******************* ORDER STATUS PAGE STYLE START *******************/
+.account_orderstatus{
+	.account-content{
+		.account-list{
+			.account-listItem{
+				&:last-child{
+					border-bottom: none;
+				}
+				.account-product{
+					.account-product-body{
+						.account-orderStatus{
+							.account-orderStatus-label{
+								vertical-align: middle;
+								margin: 0;
+								@include breakpoint("small"){
+									margin: 0 0 0.35714rem;
+								}
+							}
+							.account-orderStatus-action{
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************* ORDER STATUS PAGE STYLE END *******************/
+
+/******************* ACCCOUNT MESSAGE PAGE STYLE START *******************/
+.account_addressbook{
+	.addressList{
+		.address{
+			margin-bottom: spacing("single");
+			.panel--address{
+				.form-actions{
+					@include breakpoint("small"){
+						position: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************* ACCCOUNT MESSAGE PAGE STYLE END *******************/
+
+
+/******************* GIFT CERTIFICATE PAGES STYLE START *******************/
+.giftcertificates{
+	.form-actions{
+		.button{
+			+ .button{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				@include breakpoint("small"){
+					display: inline-block;
+					margin-left: spacing("half");
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+.giftcertificates_redeem,.giftcertificates_balance{
+	h3,p{
+		margin-bottom: 10px;
+		@include md{
+			margin-bottom: 15px;
+		}
+		@include xl{
+			margin-bottom: 20px;
+		}
+	}
+	li{
+		margin-bottom: 10px;
+	}
+}
+/******************* GIFT CERTIFICATE PAGES STYLE END *******************/
+
+
+/******************* WRITE REVIEW POPUP STYLE START *******************/
+.writeReview-productDetails{
+	.product-brand{
+		margin: 10px 0;
+		color: $product-body-text-color;
+		font-size: $body-fontsize;
+		@include md{
+			font-size: $body-fontsize + 1;
+		}
+		@include xl{
+			font-size: $body-fontsize + 2;
+		}
+	}
+	.product-title{
+		font-family: $product-title-font;
+		font-weight: 700;
+		color: $product-title-color;
+		font-size: $product-title-fontsize - 6;
+		margin: 0 0 10px;
+		@include md{
+			font-size: $product-title-fontsize - 2;
+			margin: 0 0 15px;
+		}
+		@include lg{
+			font-size: $product-title-fontsize - 1;
+			margin: 0 0 20px;
+		}
+		@include xl{
+			font-size: $product-title-fontsize;
+			margin: 0 0 25px;
+		}
+	}
+	.writeReview-productImage-container{
+		&:after{
+			padding-bottom: 100%;
+		}
+	}
+}
+/******************* WRITE REVIEW POPUP STYLE END *******************/
+
+
+/******************* ADD TO CART POPUP STYLE START *******************/
+#previewModal{
+	.modal-body{
+		.previewCart{
+			.previewCartCheckout{
+				@include breakpoint("medium"){
+					width: 100%;
+					float: none;
+					display: block;
+					max-width: 400px;
+					margin: 0 auto 20px;
+				}
+				@include breakpoint("large"){
+					width: 25%;
+					float: right;
+					max-width: 100%;
+					margin: 0;
+				}
+				.previewCartCheckout-subtotal{
+					line-height: 1;
+					margin: 10px 0;
+					@include xl{
+						margin: 15px 0;
+					}
+					strong{
+						margin: 10px 0 0;
+						line-height: 1;
+						@include xl{
+							margin: 15px 0 0;
+						}
+					}
+				}
+				p{
+					margin: 0 0 10px;
+					line-height: 1;
+					@include xl{
+						margin: 0 0 15px; 
+					}
+				}
+			}
+			.productView{
+				@include breakpoint("medium"){
+					width: 100%;
+				}
+				@include breakpoint("large"){
+					width: 75%;
+				}
+				.productView-img-container{
+					&:after{
+						padding-bottom: 100%;
+					}
+				}
+				.productView-details{
+					.productView-brand{
+						margin: 0 0 10px;
+						color: $product-body-text-color;
+						font-size: $body-fontsize;
+						&:hover{
+							color: $link-hover-color;
+						}
+						@include md{
+							font-size: $body-fontsize + 1;
+						}
+						@include xl{
+							font-size: $body-fontsize + 2;
+							margin: 0 0 15px;
+						}
+					}
+					.productView-price{
+						color: $link-hover-color;
+						font-weight: bold;
+						font-size: $body-fontsize + 4;
+						margin-right: 4px;
+						order: 3;
+						@include breakpoint("small"){
+							margin-right: 10px;
+						}
+						@include md{
+							font-size: $body-fontsize + 6;
+						}
+						@include lg{
+							font-size: $body-fontsize + 6;
+							margin-right: 8px;
+						}
+						@include xl{
+							font-size: $body-fontsize + 10;
+							margin-right: 15px;
+						}	
+					}
+				}
+			}
+		}
+		.suggestiveCart{
+			.productGrid{
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 10px;
+				@include md{
+					margin-top: 15px;
+				}
+				@include lg{
+					margin-top: 20px;
+				}
+				.product{
+					height: auto;
+					.card{
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+/******************* ADD TO CART POPUP STYLE END *******************/
+
+
+/******************* QUICK VIEW POPUP STYLE START *******************/
+.quickView{
+	.product-usp{
+		.usp-list{
+			.usp-list-item{
+				width: 100%;
+				padding: 5px;
+				@include breakpoint("medium"){
+					width: 50%;
+				}
+				@include lg{
+					width: 25%;
+					padding: 0 10px;
+				}
+				.usp-element{
+					@include xl{
+						padding: 20px 10px;
+					}
+				}
+			}
+		}
+	}
+	.productView-details{
+		.productView-product{
+			.price-rating{
+				display: block;
+				.productView-price{
+					display: block;
+					width: 100%;
+				}
+				.productView-rating{
+					display: block;
+					width: 100%;
+					margin-top: 10px;
+					text-align: left;
+					@include lg{
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+	.productView-options{
+		.product-purchase-section{
+		    @include md{
+		        display: inline-block;
+		    }
+			.form-field--increments{
+				.form-increment{
+			    	.form-input--incrementTotal{
+			    		font-size: $body-fontsize - 1;
+			    		width: spacing("single") + spacing("half");
+			    		@include xl{
+			    			font-size: $body-fontsize;
+			    		}
+			    	}
+			    }
+			    @include xl{
+			    	margin: 0 8px 0 0;
+			    }
+			}
+		    .form-action{
+		        display: block;
+		        margin: 20px 0 0;
+		        width: 40%;
+		        @include breakpoint("medium"){
+		            width: auto;
+		            padding: 0;
+		            display: inline-block;
+		            margin: 0;
+		        }
+		        @include md{
+					display: block;
+					padding: 0 4px 0 0;
+					margin: 20px 0 0;
+				}
+				@include lg{
+					margin: 0;
+					padding: 0;
+					display: inline-block;
+				}
+		        #form-action-addToCart{
+		        	font-size: $body-fontsize - 1;
+		    		@include xl{
+		    			font-size: $body-fontsize;
+		    		}
+		        }
+		    }
+			@include xl{
+				padding: 0 8px 0 0;
+			}
+			
+		}
+		.form-wishlist{
+			display: inline-block;
+			vertical-align: bottom;
+			padding: 0;
+			.dropdown-menu-button{
+				span{
+					font-size: $body-fontsize - 1;
+					@include xl{
+						font-size: $body-fontsize;
+					}
+				}
+				@include xl{
+					padding: 12px 30px;
+				}
+			}
+		}
+	}
+}
+.modal{
+	z-index: 10005;
+}
+/******************* QUICK VIEW POPUP STYLE END *******************/
+
+
+/******************* CART PAGE STYLE START *******************/
+body.cart{
+	.page{
+		margin: 0 -(spacing("half"));
+	}
+	.cart-header{
+		background-color: $primary-btn-bg;
+		.cart-header-item{
+			color: $primary-btn-text;
+			padding: 10px;
+		}
+	}
+	tbody{
+		tr{
+			td{
+				border: none;
+				padding: 0;
+				text-align: left;
+			}
+		}
+	}
+	.definitionList{
+		margin: 0 0 10px;
+		display: inline-block;
+		width: 100%;
+		.definitionList-key{
+			margin: 0;
+			font-weight: 500;
+			color: $form-label-color;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: $body-fontsize - 1;
+			width: 110px;
+			@include sm{
+				width: 120px;
+			}
+			@include lg{
+				font-size: $body-fontsize;
+			}
+		}
+		.definitionList-value{
+			margin: 0;
+			color: $body-text-color;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: $body-fontsize - 2;
+			@include xl{
+				font-size: $body-fontsize;
+			}	
+		}
+		@include lg{
+			margin: 0 0 15px;
+		}
+		@include xl{
+			margin: 0 0 20px;
+		}
+	}
+	.change-item-option{
+		font-weight: 400;
+		margin-top: 10px;
+	}
+	.cart-item-quantity{
+		@include breakpoint("medium"){
+			text-align: center;
+		}
+		.form-increment{
+			border: 1px solid $global-border-color;
+			border-radius: 50px;
+			padding: 5px 10px;
+			.button{
+				border: none;
+				padding: 0;
+				svg{
+					fill: #a1a1a1;
+				}
+			}
+			@include sm{
+				padding: 8px 16px;
+			}
+			@include lg{
+				padding: 10px 20px;
+			}
+			.form-input--incrementTotal{
+				color: $body-text-color;
+				font-size: $body-fontsize - 1;
+			}
+		}
+	}
+	.cart-header-quantity{
+		@include breakpoint("medium"){
+			text-align: center;
+		}
+	}
+	.cart-remove{
+		margin-top: 0;
+		background-color: $primary-btn-bg;
+		border: 1px solid $primary-btn-bg;
+		svg{
+			fill: $theme-white;
+		}
+		&:hover{
+			background-color: transparent;
+			svg{
+				fill: $link-hover-color;
+			}
+		}
+	}
+	.cart-totals{
+		width: 100%;
+		.cart-total{
+			.cart-total-label{
+				color: $body-text-color;
+				font-size: $body-fontsize;
+				width: 41%;
+			    text-align: left;
+			    padding-left: 0;
+			    float: left;
+			}
+			.cart-total-value{
+				float: right;
+				font-size: $body-fontsize;
+				button{
+					color: $link-color;
+					&:hover{
+						color: $link-hover-color;
+					}
+				}
+			}
+		}
+		@include sm{
+			width: 58.33333%;
+		}
+		@include lg{
+			width: 41.66667%;
+		}
+	}
+	.cart-form{
+		.form{
+			.form-input{
+				width: 73%;
+				@include breakpoint("small"){
+					width: 78%;
+					height: 32px;
+				}
+				@include sm{
+					height: 36px;
+				}
+				@include xl{
+					height: 40px;
+				}
+			}
+			.button{
+				width: 25%;
+				float: right;
+				@include breakpoint("small"){
+					width: 20%;
+				}
+			}
+		}
+	}
+	.estimator-form{
+		dl{
+			margin-bottom: 0;
+		}
+	}
+	.cart-item-info{
+		margin-top: spacing("half");
+		@include breakpoint("small"){
+			margin-top: 0;
+		}
+	}
+	.cart-item-info + .cart-item-info{
+		@include breakpoint("small"){
+			margin-top: 0;
+		}
+	}
+	.cart-item-block{
+		&.cart-item-figure{
+			@include breakpoint("medium"){
+				width: 12%;
+			}
+			.cart-item-fixed-image{
+				max-width: get-width(stencilString('productthumb_size'));
+
+			    @include lazy-loaded-img;
+
+			    @include breakpoint("medium") {
+			        margin-left:0;
+			    }
+			}
+		}
+		&.cart-item-title{
+			padding: 0 0 0 spacing("single");
+			@include breakpoint("medium"){
+				padding: spacing("single");
+			}
+		}
+		.cart-item-name{
+			margin: 0 0 10px;
+			@include lg{
+				margin: 0 0 15px;
+			}
+			a{
+				text-decoration: none;
+			}
+		}
+		.cart-item-label{
+			font-weight: 700;
+			margin-bottom: 10px;
+			@include breakpoint("medium"){
+				margin-bottom: 0;
+			}
+		}
+	}
+	.cart-actions{
+		.button{
+			@include breakpoint("small"){
+				width: 100%;
+				float: none;
+				max-width: 320px;
+				margin: 0 auto;
+				display: block;
+			}
+			@include sm{
+				float: right;
+				width: auto;
+			}
+		}
+	}
+	.modal-body{
+		p{
+			margin-bottom: spacing("single");
+		}
+	}
+	.modal-content{
+		.form-actions{
+			margin-bottom:1.5rem;
+		}
+	}
+	.cart-item-options--giftWrapping{
+		margin-bottom: 0;
+		.cart-item-option-description{
+			margin-bottom: 0;
+			.cart-item-option-actions{
+				display: block;
+				@include breakpoint("small"){
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+/******************* CART PAGE STYLE END *******************/
+
+
+/******************* COMPARE PAGE STYLE START *******************/
+.compare{
+	.card{
+		&:hover{
+			box-shadow: none;
+		    border-color: $global-border-color;
+			.card-figure{
+				.card-img-container{
+				 	.card-image{
+				 		transform: none;
+				 	}
+				}
+		   	}
+		    .card-body {
+			   border-top: 1px solid transparent;
+			   height: auto;
+			   background-color: $card-bg;
+			   transform: none;
+			}
+		}
+	}
+}
+.custowithscroll_pro{ 
+	max-width: 100%; 
+	width: 100%;
+    overflow-x: scroll; 
+    .compareTable{
+    	tbody{
+    		.compareTable-row{
+    			&:first-child,&:last-child{
+	    			.compareTable-heading,.compareTable-product,.compareTable-item{
+	    				border-bottom: none;
+	    			}
+	    		}
+	    		.compareTable-heading,.compareTable-product,.compareTable-action,.compareTable-item{
+	    			letter-spacing: 0.5px;
+	    			border: none;
+	    			border-bottom: 1px solid $global-border-color;
+	    			text-align: left;
+	    			width: 200px;
+	    			@include breakpoint("small"){
+	    				width: 280px;
+	    			}
+	    			@include breakpoint("medium"){
+	    				width: 300px;
+	    			}
+	    			@include xl{
+	    				width: 320px;
+	    			}
+	    		}
+	    		.compareTable-heading{
+	    			font-weight: 700;
+	    			background-color: transparent;
+	    			width: auto;
+	    			.compareTable-headingText{
+	    				@include breakpoint("medium"){
+	    					right: 0;
+	    					line-height: 1;
+	    				}
+	    			}
+	    			@include breakpoint("medium"){
+	    				width: 300px;
+	    			}
+	    			@include xl{
+	    				width: 320px;
+	    			}
+	    		}
+	    		.compareTable-product{
+	    			background-color: transparent;
+	    			.card{
+	    				&:hover{
+	    					.card-body{
+	    						transform: none;
+	    						margin-bottom: 0;
+	    					}
+	    				}
+	    				.card-body{
+	    					.price-section{
+					        	font-family: $card-price-font;
+					          	font-size: $body-fontsize;
+					          	color: $card-price-color; 
+					          	margin-right: 4px;
+					          	@include sm{
+					              	font-size: $body-fontsize + 1;
+					          	}
+					          	@include md{
+					            	margin-right: 5px;
+					          	}
+					          	@include xl{
+					              	font-size: $body-fontsize + 2;
+					          	}
+					          	&:last-child{
+					            	margin-right: 0;
+					          	}
+					          	&.actual-price{
+					            	font-size: $body-fontsize + 2;
+					            	color: $section-sub-title-color;
+					            	font-weight: 700;
+					            	@include sm{
+					              		font-size: $body-fontsize + 4;
+					            	}
+					            	@include xl{
+					              		font-size: $body-fontsize + 6;
+					            	}
+					          	}
+					        }
+	    				}
+	    			}
+	    		}
+	    		.compareTable-removeProduct{
+	    			width: 20px;
+	    			height: 20px;
+	    			top: 10px;
+	    			right: 10px;
+	    			background-color: $primary-btn-bg;
+					border: 1px solid $primary-btn-bg;
+	    			.icon{
+	    				fill: $theme-white;
+	    				height: 14px;
+	    				width: 14px;
+	    				margin-top: 0;
+	    				position: absolute;
+					    top: 50%;
+					    left: 50%;
+					    transform: translate(-50%,-50%);
+	    			}
+	    			&:hover{
+	    				background-color: transparent;
+	    				.icon{
+	    					fill: $link-hover-color;
+	    				}
+	    			}
+	    		}
+	    	}
+    	}	
+    }
+}
+/******************* COMPARE PAGE STYLE END ******************/
+
+/* Update 1.3.1 Added switch for mobile menu */
+.desktop-menu{
+	border-top:none !important;
+	display: none !important;
+	
+	@media only screen and (min-width:1024px){
+		display:inline-block !important;
+	}
+}
+
+.mobile-menu{
+	border-top:none !important;
+	display: none !important;
+	
+	@media only screen and (max-width:1023px){
+		display:block !important;
+	}
+}
+
+.alertBox--error{
+	margin-top:10px;
+}
+
+/* Update 1.3.2 Call for Price styling */
+.call-for-price-label{
+	font-size: 18px;
+    color: $link-hover-color;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/*Account Pagination Start*/
+.account{
+    .pagination{
+        .pagination-list{
+            text-align: center;
+        }
+    }
+}
+/*Account Pagination End*/
+
+.header-left{
+	.dropdown{
+		left: 50px;
+		top: 0;
+		z-index: 99;
+		background-color: transparent;
+	}
+}
+
+.dropdown--quickSearch{
+	display: block;
+	width: 250px;
+	padding: 0;
+}

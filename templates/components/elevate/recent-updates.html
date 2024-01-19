@@ -1,0 +1,58 @@
+{{#unless theme_settings.hide_recent}}
+<div class="recent-update">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-heading"> 
+                {{theme_settings.recent-title}}
+            </h2>
+            {{#if theme_settings.recent-sub}}
+                <p class="section-sub-heading">
+                    {{theme_settings.recent-sub}}
+                </p>
+            {{/if}}
+        </div>
+        <div class="recent-update-element">
+            <div class="recent-update-element-content {{#each blog.recent_posts}}{{#if thumbnail}}has-blog-image{{else}}no-blog-image{{/if}}{{/each}}">
+                {{#each blog.recent_posts }}
+                 {{#lt @index 1}}
+                    <div class="recent-update-left show">
+                        <div class="recent-update-details">
+                            <h5 class="blog-title">{{title}}</h5>
+                            <p class="blog-summary">{{summary}}...</p> 
+                            <a class="blog-read-more" href="{{url}}"><span>{{lang 'blog.read_more'}}</span></a>
+                        </div>
+                    </div>
+                    <div class="recent-update-right show">
+                        {{#if author}}
+                        <p class="blog-author">
+                            <span class="icon-profile show theme-icon" data-icon="&#xe913;"></span>
+                            <span class="show">{{author}}</span>
+                        </p>
+                        {{/if}}
+                        <img 
+							class="lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{getImage thumbnail}}" 
+							alt="{{thumbnail.alt}}" 
+							title="{{thumbnail.alt}}"
+						/>
+							
+                        {{#if date_published}} 
+                        <p class="blog-date">
+                            <span class="icon-calendar show theme-icon" data-icon="&#xe901;"></span>
+                            <span class="date-format show">{{date_published}}</span>
+                        </p>
+                        {{/if}}
+                    </div>
+                   {{/lt}}
+                {{/each}} 
+            </div>
+            <div class="recent-update-more">
+                <a href="/blog">{{lang 'home.custom_read'}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/unless}}
+

@@ -1,0 +1,129 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{inject "bearerToken" settings.storefront_api.token}}
+{{inject "showSwatch" theme_settings.show_card_swatch}}
+{{#partial "hero"}}
+
+	<!-- PAGE BUILDER SECTION START -->
+    {{{region name="home_below_menu"}}}
+    <!-- PAGE BUILDER SECTION END -->
+    
+    {{#if carousel}}
+        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
+    {{/if}}
+    
+    <!-- PAGE BUILDER SECTION START -->
+    <div class="container">
+    {{{region name="home_below_carousel"}}}
+    </div>
+    <!-- PAGE BUILDER SECTION END -->
+    
+{{/partial}}
+ 
+{{#partial "page"}}
+
+
+<div class="container mt-20">
+	{{#each shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+</div>
+
+    
+</div>
+<div class="main full">
+	
+	
+    <!-- SHOP BY CATEGORY SECTION START -->
+        {{> components/elevate/shop-by-category}}
+    <!-- SHOP BY CATEGORY SECTION END -->
+
+    <!-- TOP SELLER PRODUCTS SECTION START -->
+    	<div class="container">
+    		{{{region name="home_above_top_products"}}}
+    	</div>
+    	
+        {{#if products.top_sellers}}
+            {{> components/elevate/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{/if}}
+        
+        {{{region name="home_below_top_products"}}}
+    <!-- TOP SELLER PRODUCTS SECTION END -->
+
+    <!-- FEATURED PRODUCTS SECTION START -->
+        {{#if products.featured}}
+            {{> components/elevate/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        {{/if}}
+    <!-- FEATURED PRODUCTS SECTION END -->
+    
+    <!-- NEW PRODUCTS SECTION START -->
+    <div class="container">
+    	{{{region name="home_above_new_products"}}}
+    </div>	
+        {{#if products.new}}
+            {{> components/elevate/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        {{/if}}
+    <!-- NEW PRODUCTS SECTION END -->
+    
+    
+    <!-- PAGE BUILDER SECTION START -->
+    <div class="container">
+        {{{region name="home_below_featured_products"}}}
+    </div>
+    <!-- PAGE BUILDER SECTION END -->
+
+    <!-- OUR STORY SECTION START -->
+        {{> components/elevate/our-story}}
+    <!-- OUR STORY SECTION END -->
+    
+    <!-- BOTTOM BANNER SECTION START -->
+        {{> components/elevate/home-banner-bottom}}
+    <!-- BOTTOM BANNER SECTION END -->
+    
+
+    <!-- RECENT UPDATES SECTION START -->
+        {{> components/elevate/recent-updates}}
+    <!-- RECENT UPDATES SECTION END -->
+
+    <!-- USP SECTION START -->
+        {{> components/elevate/usp-section}} 
+    <!-- USP SECTION END -->
+
+    <!-- INSTAGRAM START -->
+        {{> components/elevate/instagram}}
+    <!-- INSTAGRAM END -->
+    
+    <!-- PAGE BUILDER SECTION START -->
+    <div class="container">
+        {{{region name="home_above_footer_container"}}}
+    </div>
+    {{{region name="home_above_footer"}}}
+    <!-- PAGE BUILDER SECTION END -->
+</div>
+{{/partial}}
+{{> layout/base}}
+
+<!-- Global site tag (gtag.js) - Google Ads Tag Created By FeedArmy V2.01 for home page -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-348895284"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-348895284');
+</script>
+<script>
+  gtag('event', 'home', {
+    'send_to': 'AW-348895284'
+  });
+</script>

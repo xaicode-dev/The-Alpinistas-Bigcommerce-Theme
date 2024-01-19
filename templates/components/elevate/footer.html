@@ -1,0 +1,174 @@
+{{#unless theme_settings.hide_footer_logo}} 
+<div class="footer-logo">
+    {{#if page_type '===' 'default'}}
+        <div class="header-logo {{#if settings.store_logo.image}}logo-image{{else}}logo-text{{/if}}">
+            {{> components/common/store-logo}}
+        </div>
+    {{else}} 
+        <div class="header-logo {{#if settings.store_logo.image}}logo-image{{else}}logo-text{{/if}}">
+            {{> components/common/store-logo}}
+        </div>
+    {{/if}}
+</div>
+{{/unless}} 
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        {{#unless theme_settings.hide_footer_menu}} 
+        <div class="navPages-container footer-menu" id="menu" data-menu>
+            <nav class="navPages">
+                <ul class="navPages-list">
+                    {{#if theme_settings.footer_first_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_first_nav_menu_link}}{{theme_settings.footer_first_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_first_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_second_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_second_nav_menu_link}}{{theme_settings.footer_second_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_second_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_third_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_third_nav_menu_link}}{{theme_settings.footer_third_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_third_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_fourth_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_fourth_nav_menu_link}}{{theme_settings.footer_fourth_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_fourth_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_fifth_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_fifth_nav_menu_link}}{{theme_settings.footer_fifth_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_fifth_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_sixth_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_sixth_nav_menu_link}}{{theme_settings.footer_sixth_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_sixth_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_seventh_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_seventh_nav_menu_link}}{{theme_settings.footer_seventh_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_seventh_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_eight_nav_menu}}
+                    <li class="navPages-item">
+                        <a class="navPages-action" href="{{#if theme_settings.footer_eight_nav_menu_link}}{{theme_settings.footer_eight_nav_menu_link}}{{/if}}">
+                            {{theme_settings.footer_eight_nav_menu}}
+                        </a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div> 
+        {{/unless}}
+        <div class="footer-content">
+	        {{#unless theme_settings.hide_footer_menu_2}}
+            <div class="footer-content-left show">
+                <ul>
+                    <li>
+                        <a href="{{#if theme_settings.footer_first_webpage_link}}{{theme_settings.footer_first_webpage_link}}{{/if}}">{{#if theme_settings.footer_first_webpage}}{{theme_settings.footer_first_webpage}}{{/if}}</a>
+                    </li>
+                    <li>
+                        <a href="{{#if theme_settings.footer_second_webpage_link}}{{theme_settings.footer_second_webpage_link}}{{/if}}">{{#if theme_settings.footer_second_webpage}}{{theme_settings.footer_second_webpage}}{{/if}}</a>
+                    </li>
+                    <li>
+                        <a href="{{#if theme_settings.footer_third_webpage_link}}{{theme_settings.footer_third_webpage_link}}{{/if}}">{{#if theme_settings.footer_third_webpage}}{{theme_settings.footer_third_webpage}}{{/if}}</a>
+                    </li>
+                     <li>
+                        <a href="/accessibility-statement">Accessibility Statement</a>
+                    </li>
+                </ul>
+            </div>
+            {{/unless}}
+            <div class="footer-content-middle show">
+                <div class="footer-subcontent-middle">
+                    {{#unless theme_settings.hide_footer_social_link}}
+                    <div class="theme-social-icons">
+                        {{> components/elevate/social-links}}
+                    </div>
+                    {{/unless}}
+                    {{#unless theme_settings.hide_footer_newsletter}}
+                    <div class="theme-newsletter">
+                        {{#if settings.show_newsletter_box}}
+                            {{> components/elevate/subscription-form}}
+                        {{/if}}
+                    </div>
+                    {{/unless}}
+                    
+                    {{#unless theme_settings.hide_theme_payment}}
+	                <div class="theme-payment show">
+	                    {{> components/elevate/payment-icons}}
+	                </div>
+	                {{/unless}}
+	                
+	                {{{region name="ssl_site_seal--global"}}}
+                </div>
+            </div>
+            <div class="footer-content-right show">
+                {{#unless theme_settings.hide_theme_address}}
+                <div class="theme-address show">
+                    <address>{{nl2br settings.address}}</address>
+                </div>
+                {{/unless}}
+                
+                
+                {{#if theme_settings.footer_phone_number}}
+                <div class="theme-address footer-phone show">
+                	<address>
+                	
+                	<svg enable-background="new 0 0 139 139" height="18px" id="Phone" version="1.1" viewBox="0 0 139 139" width="18px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M67.317,81.952c-9.284-7.634-15.483-17.054-18.742-22.414l-2.431-4.583c0.85-0.912,7.332-7.853,10.141-11.619  c3.53-4.729-1.588-9-1.588-9S40.296,19.933,37.014,17.076c-3.282-2.861-7.06-1.272-7.06-1.272  c-6.898,4.457-14.049,8.332-14.478,26.968C15.46,60.22,28.705,78.216,43.028,92.148c14.346,15.734,34.043,31.504,53.086,31.486  c18.634-0.425,22.508-7.575,26.965-14.473c0,0,1.59-3.775-1.268-7.06c-2.86-3.284-17.265-17.688-17.265-17.688  s-4.268-5.119-8.998-1.586c-3.525,2.635-9.855,8.496-11.38,9.917C84.171,92.749,73.582,87.104,67.317,81.952z"/></svg>
+                	
+                	<a href="tel:{{theme_settings.footer_phone_number}}">{{theme_settings.footer_phone_number}}</a>
+                	
+                	</address>
+                </div>
+                {{/if}}
+                
+                {{#if theme_settings.footer_email}}
+                <div class="theme-address footer-email show">
+	                
+                	<address>
+                	
+                	<svg height="16px" enable-background:"new 0 0 16 16" version="1.1" viewBox="0 0 16 16" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M8,10c-0.266,0-0.5-0.094-1-0.336L0,6v7c0,0.55,0.45,1,1,1h14c0.55,0,1-0.45,1-1V6L9,9.664C8.5,9.906,8.266,10,8,10z M15,2  H1C0.45,2,0,2.45,0,3v0.758l8,4.205l8-4.205V3C16,2.45,15.55,2,15,2z"/></svg>
+
+                	<a href="mailto:{{theme_settings.footer_email}}">{{theme_settings.footer_email}}</a>
+                	
+                	</address>
+                </div>
+                {{/if}}
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+{{#unless theme_settings.hide_bottom_footer}}
+<div class="bottom-footer">
+    <div class="container">
+        <p>
+            {{#if theme_settings.show_copyright_footer}} &copy; {{moment format="YYYY"}} {{settings.store_name}} {{/if}}
+            {{#if theme_settings.show_powered_by}} Powered by <a class="powered-by" href="https://bigcommerce.com" rel="nofollow">BigCommerce</a> {{/if}}
+            {{#if theme_settings.show_all_rights_footer}} {{lang 'footer.all_rights'}} {{/if}}
+            {{#if theme_settings.show_sitemap_footer}} | <a class="footer-sitemap" href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a> {{/if}}
+        </p>
+    </div>
+</div>
+{{/unless}}

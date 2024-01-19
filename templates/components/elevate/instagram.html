@@ -1,0 +1,26 @@
+{{#unless theme_settings.hide_instagram}}
+<div class="instagram">
+    <div class="section-title">
+        <h2 class="section-heading"> 
+            <span class="icon-instagram show theme-icon" data-icon="&#xe905;"></span>
+            <a href="{{theme_settings.instagram-link}}">{{theme_settings.instagram-title}}</a>
+        </h2>
+        {{#if theme_settings.instagram-sub}}
+            <p class="section-sub-heading">
+                {{theme_settings.instagram-sub}}
+            </p>
+        {{/if}}
+    </div>
+    {{#if theme_settings.elfsight_instagram_app_code}}
+    <div class="instagram-section">
+		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+		<div class="{{theme_settings.elfsight_instagram_app_code}}"></div>
+ 	</div>
+ 	{{/if}}
+</div>
+{{/unless}}
+
+
+
+            
+		

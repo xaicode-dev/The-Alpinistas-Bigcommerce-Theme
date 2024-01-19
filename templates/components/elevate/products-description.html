@@ -1,0 +1,26 @@
+<ul class="tabs" data-tab>
+    <li class="tab is-active">
+        <a class="tab-title" href="#tab-description">
+          <span class="icon-Description show theme-icon" data-icon="&#xe90a;"></span>
+          <span class="show">{{lang 'products.description'}}</span>
+        </a>
+    </li> 
+    {{#if product.warranty}}
+        <li class="tab">
+            <a class="tab-title" href="#tab-warranty">
+              <span class="icon-Specifications show theme-icon" data-icon="&#xe90c;"></span>
+              <span class="show">{{lang 'products.warranty'}}</span>
+            </a>
+        </li>
+    {{/if}} 
+</ul>
+<div class="tabs-contents">
+    <div class="tab-content is-active" id="tab-description">
+        {{{product.description}}}
+    </div>
+   {{#if product.warranty}}
+       <div class="tab-content" id="tab-warranty">
+           {{{product.warranty}}}
+       </div>
+   {{/if}}
+</div>

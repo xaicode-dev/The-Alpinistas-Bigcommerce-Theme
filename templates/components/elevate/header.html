@@ -1,0 +1,133 @@
+<div class="custom-banners top"> 
+    {{#if page_type '===' 'default'}}
+    {{#if banners.top}}
+    <div class="banners" data-banner-location="top">
+        {{#each (limit banners.top_metadata 1)}}
+        <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+            <div data-event-type="promotion-click">
+                {{{this.content}}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{/if}}
+    {{#unless theme_settings.hide_static_banner}}
+        <div class="static-banner">
+            <div class="container">
+            {{#if settings.phone_number}}
+                <div class="static-banner-left show">
+                    {{#if theme_settings.static-banner-text}}
+                        <p>{{theme_settings.static-banner-text}}</p>
+                    {{/if}}
+                </div>
+                <div class="static-banner-right show">
+                    <div class="store-number">
+                        <span>
+                            {{lang 'footer.call_us'}}
+                            <a href="tel:{{settings.phone_number}}">{{settings.phone_number}}</a>
+                        </span>
+                    </div>
+                </div>
+            {{else}}
+                <div class="static-banner-left center show">
+                    {{#if theme_settings.static-banner-text}}
+                        <p>{{theme_settings.static-banner-text}}</p>
+                    {{/if}}
+                </div>
+            {{/if}}
+            </div> 
+        </div>
+    {{/unless}}
+</div>
+<header class="header {{theme_settings.logo-position}}" sticky="{{theme_settings.sticky-header}}" role="banner">    
+    <div class="container">
+        <div class="main-header">
+            <a href="#" class="mobileMenu-toggle show" data-mobile-menu-toggle="menu">
+                <span class="mobileMenu-toggleIcon">Toggle menu</span>
+            </a> 
+            <div class="header-middle show">
+                {{#if page_type '===' 'default'}}
+                    <div class="header-logo header-logo--{{theme_settings.logo-position}} {{#if settings.store_logo.image}}logo-image{{else}}logo-text{{/if}}">
+                        {{> components/common/store-logo}}
+                    </div>
+                {{else}}
+                    <div class="header-logo header-logo--{{theme_settings.logo-position}} {{#if settings.store_logo.image}}logo-image{{else}}logo-text{{/if}}">
+                        {{> components/common/store-logo}}
+                    </div>
+                {{/if}}
+            </div>
+            {{#if theme_settings.logo-position '==' 'left'}}
+            <div class="leftside-header">
+            {{/if}}
+            {{#if theme_settings.logo-position '==' 'right'}}
+            <div class="rightside-header">
+            {{/if}}
+            <div class="header-left show">
+                <ul class="navUser-section navUser-section--alt">
+                    <li class="navUser-item navUser-item--account show">
+                        <a class="navUser-action" href="javascript:void(0)">
+                            <span class="show myacc-title">{{lang 'common.myaccount'}}</span>
+                            <span class="icon-profile show theme-icon" data-icon="&#xe913;"></span>
+                        </a>
+                        <div class="account-dropdown">
+                            {{#if customer}}
+                                <a class="navUser-action" href="{{urls.account.index}}">
+                                    <span class="icon-profile show theme-icon" data-icon="&#xe913;"></span>
+                                    <span class="show">{{lang 'common.account'}}</span>
+                                </a>
+                                <a class="navUser-action" href="{{urls.auth.logout}}">
+                                    <span class="icon-shutdown show theme-icon" data-icon="&#xe917;"></span>
+                                    <span class="show">{{lang 'common.logout'}}</span>
+                                </a>
+                            {{else}}
+                                <a class="navUser-action" href="{{urls.auth.login}}">
+                                    <span class="icon-lock show theme-icon" data-icon="&#xe907;"></span>
+                                    <span class="show">{{lang 'common.login'}}</span>
+                                </a>
+                                {{#if settings.account_creation_enabled}}
+                                    <a class="navUser-action" href="{{urls.auth.create_account}}">
+                                        <span class="icon-edit-1 show theme-icon" data-icon="&#xe903;"></span>
+                                        <span class="show">{{lang 'common.sign_up'}}</span>
+                                    </a>
+                                {{/if}}
+                            {{/if}}
+                            {{#if settings.gift_certificates_enabled}}
+                                <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">
+                                    <span class="icon-gift show theme-icon" data-icon="&#xe906;"></span>
+                                    <span class="show">{{lang 'common.gift_cert'}}</span>
+                                </a>
+                            {{/if}}
+                        </div>
+                    </li> 
+                    <li class="navUser-item navUser-item--search show">
+                        <a class="navUser-action navUser-action--quickSearch" href="javascript:void(0)" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+                            <span class="icon-search show theme-icon" data-icon="&#xe90e;"></span>
+                            <span class="show" style="display:none;">{{lang 'common.search'}}</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="dropdown dropdown--quickSearch is-open" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+                    {{> components/elevate/quick-search}}
+                </div>
+            </div>
+            <div class="header-right show">
+                {{> components/elevate/navigation}}
+            </div>
+            {{#if theme_settings.logo-position '==' 'right'}}
+            </div>
+            {{/if}}
+            {{#if theme_settings.logo-position '==' 'left'}}
+            </div>
+            {{/if}}
+        </div>  
+    </div>
+
+    
+    <div class="navPages-container" id="menu" data-menu>
+        {{> components/elevate/navigation-menu}}
+    </div>
+</header>
+<div class="header_placeholder"></div>
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

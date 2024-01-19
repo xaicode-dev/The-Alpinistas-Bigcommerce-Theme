@@ -1,0 +1,51 @@
+{{#with theme_settings}}
+    {{#or show_accept_amex show_accept_discover show_accept_mastercard show_accept_paypal show_accept_visa show_accept_amazonpay show_accept_googlepay show_accept_maestro}}
+    <div class="footer-payment-icons">
+        {{#if show_accept_visa}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-visa"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_mastercard}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-mastercard"></use></svg>
+        </span>
+        {{/if}}
+        {{#if show_accept_paypal}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-paypal"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_maestro}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-maestro"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_applepay}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-apple-pay"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_amex}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-amex"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_discover}}
+        <span class="show">
+        	<svg class="footer-payment-icon"><use xlink:href="#icon-logo-discover"></use></svg>
+        </span>
+        {{/if}}
+        {{#if show_accept_amazonpay}}
+        <span class="show">
+            <svg class="footer-payment-icon"><use xlink:href="#icon-logo-amazon"></use></svg>    
+        </span>
+        {{/if}}
+        {{#if show_accept_klarna}}
+        <span class="show">
+        	<svg class="footer-payment-icon"><use xlink:href="#icon-logo-klarna"></use></svg>
+        </span>
+        {{/if}}
+    </div>
+    {{/or}}
+{{/with}}

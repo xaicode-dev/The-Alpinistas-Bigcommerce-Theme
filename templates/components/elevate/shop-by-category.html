@@ -1,0 +1,323 @@
+{{#unless theme_settings.hide_shopbycategory}}
+<div class="shop-by-category"> 
+	<div class="container">
+		<div class="section-title">
+			<h2 class="section-heading"> 
+				{{theme_settings.shopbycategory-title}}
+			</h2> 
+			{{#if theme_settings.shopbycategory-sub}}
+				<p class="section-sub-heading">
+					{{theme_settings.shopbycategory-sub}}
+				</p>
+			{{/if}}
+		</div> 
+
+		{{#if theme_settings.cat_number '==' 3}}
+		<!-- 3 category layout start -->
+		<div class="section-content cat-layout-3">
+			<div class="section-content-left section-sub-content">
+				<a href="{{theme_settings.firstcategory_link}}" class="category-content firstcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.firstcategory_image}}
+                             <img
+                             class="category-img"
+                             data-sizes="auto"
+                             src="{{theme_settings.firstcategory_image}}"
+                             alt="{{theme_settings.firstcategory_title}}"
+                             title="{{theme_settings.firstcategory_title}}"
+                             />
+                        {{/if}}
+						<div class="category-subcontent {{#if theme_settings.firstcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.firstcategory_title}}
+								<h3 class="category-title">{{theme_settings.firstcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.firstcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-middle section-sub-content">
+				<a href="{{theme_settings.secondcategory_link}}" class="category-content secondcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.secondcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.secondcategory_image}}" 
+							alt="{{theme_settings.secondcategory_title}}" 
+							title="{{theme_settings.secondcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.secondcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.secondcategory_title}}
+								<h3 class="category-title">{{theme_settings.secondcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.secondcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-right section-sub-content">
+				<a href="{{theme_settings.thirdcategory_link}}" class="category-content thirdcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.thirdcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.thirdcategory_image}}" 
+							alt="{{theme_settings.thirdcategory_title}}" 
+							title="{{theme_settings.thirdcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.thirdcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.thirdcategory_title}}
+								<h3 class="category-title">{{theme_settings.thirdcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.thirdcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- 3 category layout end -->
+
+		{{else if theme_settings.cat_number '==' 4}}
+		<!-- 4 category layout start -->
+		<div class="section-content cat-layout-4">
+			<div class="section-content-first section-sub-content">
+				<a href="{{theme_settings.firstcategory_link}}" class="category-content firstcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.firstcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.firstcategory_image}}" 
+							alt="{{theme_settings.firstcategory_title}}" 
+							title="{{theme_settings.firstcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.firstcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.firstcategory_title}}
+								<h3 class="category-title">{{theme_settings.firstcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.firstcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-second section-sub-content">
+				<a href="{{theme_settings.secondcategory_link}}" class="category-content secondcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.secondcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.secondcategory_image}}" 
+							alt="{{theme_settings.secondcategory_title}}" 
+							title="{{theme_settings.secondcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.secondcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.secondcategory_title}}
+								<h3 class="category-title">{{theme_settings.secondcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.secondcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-third section-sub-content">
+				<a href="{{theme_settings.thirdcategory_link}}" class="category-content thirdcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.thirdcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.thirdcategory_image}}" 
+							alt="{{theme_settings.thirdcategory_title}}" 
+							title="{{theme_settings.thirdcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.thirdcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.thirdcategory_title}}
+								<h3 class="category-title">{{theme_settings.thirdcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.thirdcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-fourth section-sub-content">
+				<a href="{{theme_settings.fourthcategory_link}}" class="category-content fourthcategory_content">
+						<div class="category-image">
+							{{#if theme_settings.fourthcategory_image}}
+								<img 
+								class="category-img lazyload" 
+								data-sizes="auto" 
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+								data-src="{{theme_settings.fourthcategory_image}}" 
+								alt="{{theme_settings.fourthcategory_title}}" 
+								title="{{theme_settings.fourthcategory_title}}"
+								/>
+							{{/if}}
+							<div class="category-subcontent {{#if theme_settings.fourthcategory_image}}{{else}}cat-no-img{{/if}}">
+								{{#if theme_settings.fourthcategory_title}}
+									<h3 class="category-title">{{theme_settings.fourthcategory_title}}</h3>
+								{{/if}}
+								{{#if theme_settings.fourthcategory_link}}
+									<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+								{{/if}}
+							</div>
+						</div>
+					</a>
+			</div>
+		</div>
+		<!-- 4 category layout end -->
+
+		{{else if theme_settings.cat_number '==' 5}}
+		<!-- 5 category layout start -->
+		<div class="section-content cat-layout-5">
+			<div class="section-content-first section-sub-content">
+				<a href="{{theme_settings.firstcategory_link}}" class="category-content firstcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.firstcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.firstcategory_image}}" 
+							alt="{{theme_settings.firstcategory_title}}" 
+							title="{{theme_settings.firstcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.firstcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.firstcategory_title}}
+								<h3 class="category-title">{{theme_settings.firstcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.firstcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-second section-sub-content">
+				<a href="{{theme_settings.secondcategory_link}}" class="category-content secondcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.secondcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.secondcategory_image}}" 
+							alt="{{theme_settings.secondcategory_title}}" 
+							title="{{theme_settings.secondcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.secondcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.secondcategory_title}}
+								<h3 class="category-title">{{theme_settings.secondcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.secondcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-third section-sub-content">
+				<a href="{{theme_settings.thirdcategory_link}}" class="category-content thirdcategory_content">
+					<div class="category-image">
+						{{#if theme_settings.thirdcategory_image}}
+							<img 
+							class="category-img lazyload" 
+							data-sizes="auto" 
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							data-src="{{theme_settings.thirdcategory_image}}" 
+							alt="{{theme_settings.thirdcategory_title}}" 
+							title="{{theme_settings.thirdcategory_title}}"
+							/>
+						{{/if}}
+						<div class="category-subcontent {{#if theme_settings.thirdcategory_image}}{{else}}cat-no-img{{/if}}">
+							{{#if theme_settings.thirdcategory_title}}
+								<h3 class="category-title">{{theme_settings.thirdcategory_title}}</h3>
+							{{/if}}
+							{{#if theme_settings.thirdcategory_link}}
+								<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="section-content-fourth section-sub-content">
+				<a href="{{theme_settings.fourthcategory_link}}" class="category-content fourthcategory_content">
+						<div class="category-image">
+							{{#if theme_settings.fourthcategory_image}}
+								<img 
+								class="category-img lazyload" 
+								data-sizes="auto" 
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+								data-src="{{theme_settings.fourthcategory_image}}" 
+								alt="{{theme_settings.fourthcategory_title}}" 
+								title="{{theme_settings.fourthcategory_title}}"
+								/>
+							{{/if}}
+							<div class="category-subcontent {{#if theme_settings.fourthcategory_image}}{{else}}cat-no-img{{/if}}">
+								{{#if theme_settings.fourthcategory_title}}
+									<h3 class="category-title">{{theme_settings.fourthcategory_title}}</h3>
+								{{/if}}
+								{{#if theme_settings.fourthcategory_link}}
+									<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+								{{/if}}
+							</div>
+						</div>
+					</a>
+			</div>
+			<div class="section-content-fifth section-sub-content">
+				<a href="{{theme_settings.fifthcategory_link}}" class="category-content fourthcategory_content">
+						<div class="category-image">
+							{{#if theme_settings.fifthcategory_image}}
+								<img 
+								class="category-img lazyload" 
+								data-sizes="auto" 
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+								data-src="{{theme_settings.fifthcategory_image}}" 
+								alt="{{theme_settings.fifthcategory_title}}" 
+								title="{{theme_settings.fifthcategory_title}}"
+								/>
+							{{/if}}
+							<div class="category-subcontent {{#if theme_settings.fifthcategory_image}}{{else}}cat-no-img{{/if}}">
+								{{#if theme_settings.fifthcategory_title}}
+									<h3 class="category-title">{{theme_settings.fifthcategory_title}}</h3>
+								{{/if}}
+								{{#if theme_settings.fifthcategory_link}}
+									<span class="category-link">{{theme_settings.shopbycategory-link}}</span>
+								{{/if}}
+							</div>
+						</div>
+					</a>
+			</div>
+		</div>
+		<!-- 5 category layout end -->
+
+		{{/if}}
+	</div>
+</div>
+{{/unless}}
