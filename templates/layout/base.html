@@ -191,7 +191,25 @@
 
     <!-- Footer scripts Start -->
     <div style="display:none;" id="amit">{{settings.request.host }}</div>
+    <!-- Reviews.io Global Sript -->
+    <script src="https://widget.reviews.io/rating-snippet/dist.js"></script>
+    <link rel="stylesheet" href="https://widget.reviews.io/rating-snippet/dist.css"/>
+    <script>
+        ratingSnippet("ruk_rating_snippet", {
+          store: "thealpinistas.com",
+          mode: "default",
+          color: "#0E1311",
+          linebreak: false,
+          text: "Reviews",
+          singularText: "Review",
+          lang: "en",
+          usePolaris: true,
+          showEmptyStars: true,
+        });
+    </script>
     {{{footer.scripts}}}
+
+</body>
 
 </body>
 </html>

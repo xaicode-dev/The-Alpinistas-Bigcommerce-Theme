@@ -58,7 +58,7 @@
     				}
     			}
 	    		@include md{
-	    			width: 30%;
+	    			width: 15%;
 	    		}
 	    	}
 	    	.leftside-header{
@@ -342,9 +342,11 @@
 	}
 }
 .header-middle{
-	width: 60%;
+	width: 80px;
+	padding: 10px;
 	@include md{
-		width: 30%;
+		width: 15%;
+		max-width: 150px;
 	}
 	.header-logo.logo-text{
 		a{
@@ -782,7 +784,7 @@
 	.header-middle{
 		width: 60%;
 		@include md{
-			width: 30%;
+			width: 15%;
 		}
 		.header-logo.logo-text{
 			a{
